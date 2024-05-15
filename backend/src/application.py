@@ -1,9 +1,13 @@
 from flask import Flask
 from flask_cors import CORS
 from models import login_manager
+import logging
+import warnings
+from sqlalchemy import exc as sqlalchemy_exc
 
 def create_app(config_file):
     
+    warnings.filterwarnings("ignore", category=sqlalchemy_exc.SAWarning)
 
     from models import db
     from flask_login import LoginManager
@@ -26,6 +30,12 @@ def create_app(config_file):
     CORS(app)
     # CSRFProtect(app)
     
+    logging.basicConfig(
+        level=logging.DEBUG,
+        format="%(asctime)s %(levelname)s %(message)s",
+        datefmt="%Y-%m-%d %H:%M:%S"                
+    )
+
     app.config.from_pyfile(config_file)   
 
     jwt = JWTManager(app)
@@ -47,6 +57,7 @@ def create_app(config_file):
     
     
     login_manager.init_app(app)
+    app.logger.info('Aplicativo inicializado com sucesso.')
 
     return app
 
