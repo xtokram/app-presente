@@ -2,6 +2,7 @@ from flask import Flask
 from flask_cors import CORS
 from models import login_manager
 import logging
+import json_log_formatter
 import warnings
 from sqlalchemy import exc as sqlalchemy_exc
 
@@ -33,8 +34,22 @@ def create_app(config_file):
     logging.basicConfig(
         level=logging.DEBUG,
         format="%(asctime)s %(levelname)s %(message)s",
-        datefmt="%Y-%m-%d %H:%M:%S"                
+        datefmt="%Y-%m-%d %H:%M:%S",
+        handlers=[
+            logging.FileHandler("/home/ubuntu/presente-backend/backend/src/backend.log"),
+            logging.StreamHandler()
+        ]             
     )
+
+    formatter = json_log_formatter.JSONFormatter()
+
+    json_handler = logging.FileHandler('/home/ubuntu/presente-backend/backend/src/backend.log')
+    json_handler.setFormatter(formatter)
+
+    logger = logging.getLogger('json_logger')
+    logger.addHandler(json_handler)
+    logger.setLevel(logging.INFO)
+
 
     app.config.from_pyfile(config_file)   
 
