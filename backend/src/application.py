@@ -2,9 +2,24 @@ from flask import Flask
 from flask_cors import CORS
 from models import login_manager
 import logging
-import json_log_formatter
+from json_log_formatter import JSONFormatter
 import warnings
 from sqlalchemy import exc as sqlalchemy_exc
+
+class CustomJSONFormatter(JSONFormatter):
+    def json_record(self, message, extra, record):
+        extra['log.level'] = record.levelname.lower()
+        extra['@timestamp'] = self.format_time(record.created)
+        extra['log.logger'] = record.name
+        extra['log.origin'] = {
+            'function': record.funcName,
+            'file.name': record.pathname,
+            'file.line': record.lineno,
+        }
+        extra['message'] = record.getMessage()
+        extra['service.name'] = 'flask_app'
+        extra['ecs.version'] = '1.6.0'
+        return extra
 
 def create_app(config_file):
     
@@ -41,14 +56,14 @@ def create_app(config_file):
         ]             
     )
 
-    formatter = json_log_formatter.JSONFormatter()
+    formatter = CustomJSONFormatter()
 
     json_handler = logging.FileHandler('/home/ubuntu/presente-backend/backend/src/backend.log')
     json_handler.setFormatter(formatter)
 
-    logger = logging.getLogger('json_logger')
-    logger.addHandler(json_handler)
-    logger.setLevel(logging.INFO)
+    json_logger = logging.getLogger('json_logger')
+    json_logger.addHandler(json_handler)
+    json_logger.setLevel(logging.INFO)
 
 
     app.config.from_pyfile(config_file)   
