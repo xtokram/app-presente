@@ -4,10 +4,13 @@ from repository.MateriaRepository import MateriaRepository
 from flask_jwt_extended import jwt_required
 from service.MateriaService import MateriaService
 
+from utils import oidc
+
 materias = Blueprint("Materia", __name__)   
 
 @materias.route("/api/materia", methods=['GET', 'POST','PUT','DELETE'])
-@jwt_required()
+#@jwt_required()
+@oidc.accept_token()
 def materia():
     logging.info('Rota /api/materia acessada.')
     if request.method == 'GET':
