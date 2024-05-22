@@ -1,4 +1,5 @@
 from flask import Blueprint, request, jsonify
+import logging
 from datetime import datetime
 from repository.LembreteRepository import LembreteRepository
 
@@ -11,11 +12,14 @@ lembretes = Blueprint("lembretes", __name__)
 @lembretes.route("/api/lembrete", methods=['GET', 'POST', 'PUT', 'DELETE'])
 @jwt_required()
 def lembrete():
+    logging.info('Rota /api/lembrete acessada.')
+
     if request.method == 'GET':
         id_lembrete = request.args.get('id')
         try:
             return jsonify(LembreteService.get_by_id(id_lembrete))
         except AssertionError as error:
+            logging.error(f'Erro ao obter lembrete por ID: {error}')
             return str(error), 400
     
     if request.method == 'POST':
@@ -32,8 +36,11 @@ def lembrete():
         
 
         try:
+            logging.info('Lembrete registrado.')
+
             return LembreteService.register(criacao=criacao, status=status, id_secretaria=id_secretaria,  destinatario_cargo=destinatario_cargo, destinatario_id=destinatario_id, titulo=titulo, mensagem=mensagem)
         except AssertionError as error:
+            logging.error(f'Erro ao registrar lembrete: {error}')
             return str(error), 400
     
     if request.method == 'PUT':
@@ -50,46 +57,63 @@ def lembrete():
         criacao = data.get('criacao', None)
         
         try:
+            logging.info('Lembrete editado.')
+
             return LembreteService.update(id_lembrete=id_lembrete, id_secretaria=id_secretaria, status=status, destinatario_cargo=destinatario_cargo, destinatario_id=destinatario_id, titulo=titulo, mensagem=mensagem, visualizacao=visualizacao, criacao=criacao)
         except AssertionError as error:
+            logging.error(f'Erro ao editar lembrete por ID: {error}')
             return str(error), 400
     
     if request.method == 'DELETE':
         id_lembrete = request.args.get('id')
         try:
+            logging.info('Lembrete deletado.')
+
             return jsonify(LembreteService.delete(id_lembrete))
         except AssertionError as error:
+            logging.error(f'Erro ao deletar lembrete por ID: {error}')
             return str(error), 400
     
 @lembretes.route("/api/lembrete/listAll", methods=['GET'])
 @jwt_required()
 def list_all():
+    logging.info('Rota /api/lembrete/listAll acessada.')
+
     return LembreteRepository.lista_all()
 
 @lembretes.route("/api/lembrete/findLembrete", methods=['GET'])
 @jwt_required()
 def find_lembrete():
+    logging.info('Rota /api/lembrete/findLembrete acessada.')
+
     cargo = request.args.get('cargo')
     id = request.args.get('id')
     try:
         return LembreteService.find_lembrete(cargo, id)
     except AssertionError as error:
+        logging.error(f'Erro ao procurar lembrete por ID e cargo: {error}')
         return str(error), 400
     
 @lembretes.route("/api/lembrete/visualizar", methods=['PUT'])
 @jwt_required()
 def lembrete_visualizado():
+    logging.info('Rota /api/lembrete/visualizar acessada.')
+
     id_lembrete = request.args.get('id')
     try: 
         return LembreteService.lembrete_visualizado(id_lembrete)
     except AssertionError as error:
+        logging.error(f'Erro ao visualizar lembrete: {error}')
         return str(error), 400
     
 @lembretes.route("/api/lembrete/visualizados", methods=['GET'])
 @jwt_required()
 def lembretes_visualizados():
+    logging.info('Rota /api/lembrete/visualizados acessada.')
+
     try:
         return LembreteRepository.lembretes_visualizados()
     except AssertionError as error:
+        logging.error(f'Erro ao obter lembretes visualizados: {error}')
         return str(error), 400
     
