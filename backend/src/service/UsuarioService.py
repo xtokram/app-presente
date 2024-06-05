@@ -105,7 +105,8 @@ class UsuarioService():
         assert senha != None and len(senha) > 0, "Insira uma senha!"
 
         user = Usuario.query.filter(Usuario.login == login).first()
-        assert Usuario.query.filter(Usuario.login == login).first() is not None, "Login ou senha incorretos"
+        # assert Usuario.query.filter(Usuario.login == login).first() is not None, "Login ou senha incorretos"
+        assert user is not None, "Login ou senha incorretos"
 
         assert Usuario.verifyPassword(password=user.senha,given_password=senha), "Login ou senha incorretos!"
 

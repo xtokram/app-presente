@@ -30,7 +30,7 @@ class LembreteRepository():
                 "id_lembrete" : lembrete.id_lembrete,
                 "id_secretaria" : lembrete.id_secretaria, 
                 "DestinatarioId": lembrete.destinatario_id,
-                "DestinatarioCargo": lembrete.destinario_cargo,
+                "destinatario_cargo": lembrete.destinatario_cargo.value,
                 "Titulo": lembrete.titulo,
                 "Mensagem": lembrete.mensagem,
                 "Criacao": lembrete.criacao,

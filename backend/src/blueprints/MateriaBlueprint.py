@@ -9,8 +9,8 @@ from utils import oidc
 materias = Blueprint("Materia", __name__)   
 
 @materias.route("/api/materia", methods=['GET', 'POST','PUT','DELETE'])
-#@jwt_required()
-@oidc.accept_token()
+@jwt_required()
+# @oidc.accept_token()
 def materia():
     logging.info('Rota /api/materia acessada.')
     if request.method == 'GET':

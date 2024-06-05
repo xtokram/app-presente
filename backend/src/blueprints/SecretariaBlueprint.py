@@ -8,7 +8,7 @@ from service.SecretariaService import SecretariaService
 secretaria = Blueprint("secretaria", __name__)
 
 @secretaria.route("/api/secretaria", methods=['GET', 'POST', 'PUT', 'DELETE'])
-#@jwt_required()
+# @jwt_required()
 def secret():
     logging.info('Rota /api/secretaria acessada.')
     if request.method == 'GET':
