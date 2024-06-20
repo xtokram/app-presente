@@ -1,6 +1,8 @@
 from flask import Blueprint, request, jsonify,session
 import logging
 from flask_jwt_extended import jwt_required,create_access_token
+import requests, os
+from datetime import datetime
 
 from service.UsuarioService import UsuarioService
 
@@ -110,3 +112,24 @@ def logout():
     except Exception as e:
         logging.error(f'Erro ao tentar realizar logout: {e}')
         return str(e), 400
+    
+
+@usuarios.route('/api/log', methods=['POST'])
+def handlelog():
+    print(request.data)
+    if not request.json or 'message' not in request.json or 'level' not in request.json:
+        return jsonify({'error': 'Message and level are required'}), 400
+
+    log_data = {
+        'message': request.json['message'],
+        'level': request.json['level'],
+        '@timestamp': datetime.now().isoformat()
+    }
+
+    try:
+        response = requests.post(os.environ['LOGSTASH_HOST'], json=log_data)
+        response.raise_for_status()
+        return jsonify({'status': 'Log sent to Logstash'}), 200
+    except requests.RequestException as error:
+        print(f'Error sending log to Logstash: {error}')
+        return jsonify({'error': 'Failed to send log to Logstash'}), 500

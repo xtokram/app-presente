@@ -7,6 +7,8 @@ load_dotenv()
 # -*- coding: utf-8 -*-
 DATABASE_LOGIN = os.environ.get('DATABASE_LOGIN')
 DATABASE_PASS = os.environ.get('DATABASE_SENHA')
+DATABASE_IP = os.environ.get('DATABASE_IP')
+
 # flask core settings
 DEBUG = False
 TESTING = False
@@ -24,7 +26,7 @@ WTF_CSRF_ENABLED = True
 # flask mail settings
 
 #MAIL_DEFAULT_SENDER =os.environ.get('MAIL_DEFAULT_SENDER')
-SQLALCHEMY_DATABASE_URI = f'postgresql://{DATABASE_LOGIN}:{DATABASE_PASS}@localhost/app_presente'
+SQLALCHEMY_DATABASE_URI = f'postgresql://{DATABASE_LOGIN}:{DATABASE_PASS}@{DATABASE_IP}/app_presente'
 
 # Redis
 REDIS_HOST = os.environ.get('REDIS_HOST')
