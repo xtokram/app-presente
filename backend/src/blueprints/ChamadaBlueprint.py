@@ -1,7 +1,7 @@
 from flask import Blueprint, request, jsonify
 import logging
 from repository.ChamadaRepository import ChamadaRepository
-from flask_jwt_extended import jwt_required
+from flask_jwt_extended import jwt_required, get_jwt_identify
 
 from service.ChamadaService import ChamadaService
 
@@ -10,7 +10,9 @@ chamadas = Blueprint("chamadas", __name__)
 @chamadas.route("/api/chamada", methods=['GET', 'POST', 'PUT', 'DELETE'])
 @jwt_required()
 def professor():
-    logging.info('Rota /api/chamada acessada.')
+    usuario_atual = get_jwt_identify().get('nome')
+
+    logging.info(f'Rota /api/chamada acessada pelo usuario {usuario_atual}.')
 
     if request.method == 'GET':
         id_chamada = request.args.get('id')
@@ -31,7 +33,7 @@ def professor():
         id_professor = data.get('id_professor', 'NOT_FOUND')
         
         try:
-            logging.info('chamada registrada.')
+            logging.info(f'chamada registrada pelo usuario {usuario_atual}.')
 
             return ChamadaService.register(id_turma=id_turma,id_professor=id_professor, status=status, abertura=abertura, encerramento=encerramento)
         except AssertionError as error:
@@ -49,7 +51,7 @@ def professor():
         abertura = data.get('abertura', 'NOT_FOUND')
         encerramento = data.get('encerramento', 'NOT_FOUND')
         try:
-            logging.info('Chamada editada.')
+            logging.info(f'Chamada editada pelo usuario {usuario_atual}.')
 
             return ChamadaService.update(id_chamada=id_chamada, id_turma=id_turma, id_professor=id_professor, status=status, abertura=abertura, encerramento=encerramento)
         except AssertionError as error:
@@ -61,7 +63,7 @@ def professor():
         id_chamada = request.args.get('id')
 
         try:
-            logging.info('Chamada deletada.')
+            logging.info(f'Chamada deletada deletada pelo usuario {usuario_atual}.')
 
             return jsonify(ChamadaService.delete(id_chamada))
         except AssertionError as error:
@@ -106,10 +108,13 @@ def chamadas_abertas():
 @chamadas.route("/api/chamada/fecharChamada", methods=['PUT'])
 @jwt_required()
 def fechar_chamada():
-    logging.info('Rota /api/chamada/fecharChamada acessada.')
+    usuario_atual = get_jwt_identify().get('nome')
+
+    logging.info(f'Rota /api/chamada/fecharChamada acessada pelo usuario {usuario_atual}.')
 
     id_chamada = request.args.get('id')
     try:
+        logging.error(f'Chamada fechada pelo usuario {usuario_atual}')
         return ChamadaService.fechar_chamada(id_chamada)
     except AssertionError as error:
         logging.error(f'Erro ao fechar chamada: {error}')
@@ -119,9 +124,12 @@ def fechar_chamada():
 @chamadas.route("/api/chamada/updateAll", methods=['GET'])
 @jwt_required()
 def updateAll():
-    logging.info('Rota /api/chamada/updateAll acessada.')
+    usuario_atual = get_jwt_identify().get('nome')
+
+    logging.info(f'Rota /api/chamada/updateAll acessada pelo usuario {usuario_atual}.')
 
     try:
+        logging.error(f'Chamada fechada pelo usuario {usuario_atual}')
         return ChamadaRepository.update_all()
     except Exception as error:
         logging.error(f'Erro ao verificar e atualizar todas as chamadas: {error}')

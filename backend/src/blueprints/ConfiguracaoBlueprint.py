@@ -1,6 +1,6 @@
 from flask import Blueprint, request, jsonify
 import logging
-from flask_jwt_extended import jwt_required
+from flask_jwt_extended import jwt_required, get_jwt_identify
 from service.ConfiguracaoService import ConfiguracaoService
 
 configuracoes = Blueprint("configuracoes", __name__)
@@ -8,7 +8,9 @@ configuracoes = Blueprint("configuracoes", __name__)
 @configuracoes.route("/api/configuracao", methods=['GET', 'POST', 'PUT', 'DELETE'])
 @jwt_required()
 def configuracao():
-    logging.info('Rota /api/configuracao acessada.')
+    usuario_atual = get_jwt_identify().get('nome')
+
+    logging.info(f'Rota /api/configuracao acessada pelo usuario {usuario_atual}.')
 
     if request.method == 'GET':
         id_configuracao = request.args.get('id')
@@ -28,7 +30,7 @@ def configuracao():
         fim_aula = data.get('fim_aula', 'NOT_FOUND')
 
         try:
-            logging.info('Config registrada.')
+            logging.info(f'Config registrada pelo usuario {usuario_atual}.')
 
             return ConfiguracaoService.register(status=status, aluno_ausente=aluno_ausente, inicio_aula=inicio_aula, fim_aula=fim_aula)
         except AssertionError as error:
@@ -46,7 +48,7 @@ def configuracao():
         fim_aula = data.get('fim_aula', 'NOT_FOUND')
 
         try:
-            logging.info('Config editada.')
+            logging.info(f'Config editada pelo usuario {usuario_atual}.')
 
             return ConfiguracaoService.update(id_configuracao=id_configuracao, status=status, aluno_ausente=aluno_ausente, inicio_aula=inicio_aula, fim_aula=fim_aula)
         except AssertionError as error:
@@ -58,7 +60,7 @@ def configuracao():
         id_configuracao = request.args.get('id')
 
         try:
-            logging.info('Config deletada.')
+            logging.info(f'Config deletada pelo usuario {usuario_atual}.')
 
             return jsonify(ConfiguracaoService.delete(id_configuracao))
         except AssertionError as error:

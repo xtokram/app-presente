@@ -2,7 +2,7 @@ from flask import Blueprint, request, jsonify
 import logging
 from repository.SecretariaRepository import SecretariaRepository
 
-from flask_jwt_extended import jwt_required
+from flask_jwt_extended import jwt_required, get_jwt_identify
 from service.SecretariaService import SecretariaService
 
 secretaria = Blueprint("secretaria", __name__)
@@ -10,7 +10,8 @@ secretaria = Blueprint("secretaria", __name__)
 @secretaria.route("/api/secretaria", methods=['GET', 'POST', 'PUT', 'DELETE'])
 # @jwt_required()
 def secret():
-    logging.info('Rota /api/secretaria acessada.')
+    usuario_atual = get_jwt_identify().get('nome')
+    logging.info(f'Rota /api/secretaria acessada pelo usuario {usuario_atual}.')
     if request.method == 'GET':
         id_secretaria = request.args.get('id')
         try:
@@ -27,7 +28,7 @@ def secret():
         nome = data.get('nome', 'NOT_FOUND')
         
         try:
-            logging.info('Secretaria registrada.')
+            logging.info(f'Secretaria registrada pelo usuario {usuario_atual}.')
 
             return SecretariaService.register(id_usuario=id_usuario, status=status, nome=nome)
         except AssertionError as error:
@@ -43,7 +44,7 @@ def secret():
         nome = data.get('nome', 'NOT_FOUND')
         
         try:
-            logging.info('Secretaria editada.')
+            logging.info(f'Secretaria editada pelo usuario {usuario_atual}.')
 
             return SecretariaService.update(id_secretaria=id_secretaria, status=status, nome=nome)
         except AssertionError as error:
@@ -53,7 +54,7 @@ def secret():
     if request.method == 'DELETE':
         id_secretaria = request.args.get('id')
         try:
-            logging.info('Secretaria deletada.')
+            logging.info(f'Secretaria deletada pelo usuario {usuario_atual}.')
 
             return jsonify(SecretariaService.delete(id_secretaria))
         except AssertionError as error:

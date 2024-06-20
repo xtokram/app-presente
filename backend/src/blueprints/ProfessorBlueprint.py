@@ -2,7 +2,7 @@ from flask import Blueprint, request, jsonify
 import logging
 from repository.ProfessorRepository import ProfessorRepository
 
-from flask_jwt_extended import jwt_required
+from flask_jwt_extended import jwt_required, get_jwt_identify
 
 from service.ProfessorService import ProfessorService
 
@@ -11,7 +11,9 @@ professores = Blueprint("professores", __name__)
 @professores.route("/api/professor", methods=['GET', 'POST', 'PUT', 'DELETE'])
 @jwt_required()
 def professor():
-    logging.info('Rota /api/professor acessada.')
+    usuario_atual = get_jwt_identify().get('nome')
+
+    logging.info(f'Rota /api/professor acessada pelo usuario {usuario_atual}.')
     if request.method == 'GET':
         id_professor = request.args.get('id')
         try:
@@ -28,7 +30,7 @@ def professor():
         nome = data.get('nome', 'NOT_FOUND')
 
         try:
-            logging.info('Professor registrado.')
+            logging.info(f'Professor registrado pelo usuario {usuario_atual}.')
 
             return ProfessorService.register(id_usuario=id_usuario, status=status, nome=nome)
         except AssertionError as error:
@@ -43,7 +45,7 @@ def professor():
         status = True
         nome = data.get('nome', 'NOT_FOUND')
         try:
-            logging.info('Professor editado.')
+            logging.info(f'Professor editado pelo usuario {usuario_atual}.')
 
             return ProfessorService.update(id_professor=id_professor, status=status, nome=nome)
         except AssertionError as error:
@@ -53,7 +55,7 @@ def professor():
     if request.method == 'DELETE':
         id_professor = request.args.get("id")
         try:
-            logging.info('Professor deletado.')
+            logging.info(f'Professor deletado pelo usuario {usuario_atual}.')
 
             return jsonify(ProfessorService.delete(id_professor))
         except AssertionError as error:

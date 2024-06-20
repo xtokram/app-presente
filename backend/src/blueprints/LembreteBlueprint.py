@@ -3,7 +3,7 @@ import logging
 from datetime import datetime
 from repository.LembreteRepository import LembreteRepository
 
-from flask_jwt_extended import jwt_required
+from flask_jwt_extended import jwt_required, get_jwt_identify
 
 from service.LembreteService import LembreteService
 
@@ -12,7 +12,9 @@ lembretes = Blueprint("lembretes", __name__)
 @lembretes.route("/api/lembrete", methods=['GET', 'POST', 'PUT', 'DELETE'])
 @jwt_required()
 def lembrete():
-    logging.info('Rota /api/lembrete acessada.')
+    usuario_atual = get_jwt_identify().get('nome')
+    
+    logging.info(f'Rota /api/lembrete acessada pelo usuario {usuario_atual}.')
 
     if request.method == 'GET':
         id_lembrete = request.args.get('id')
@@ -36,7 +38,7 @@ def lembrete():
         
 
         try:
-            logging.info('Lembrete registrado.')
+            logging.info(f'Lembrete registrado pelo usuario {usuario_atual}.')
 
             return LembreteService.register(criacao=criacao, status=status, id_secretaria=id_secretaria,  destinatario_cargo=destinatario_cargo, destinatario_id=destinatario_id, titulo=titulo, mensagem=mensagem)
         except AssertionError as error:
@@ -57,7 +59,7 @@ def lembrete():
         criacao = data.get('criacao', None)
         
         try:
-            logging.info('Lembrete editado.')
+            logging.info(f'Lembrete editado pelo usuario {usuario_atual}.')
 
             return LembreteService.update(id_lembrete=id_lembrete, id_secretaria=id_secretaria, status=status, destinatario_cargo=destinatario_cargo, destinatario_id=destinatario_id, titulo=titulo, mensagem=mensagem, visualizacao=visualizacao, criacao=criacao)
         except AssertionError as error:
@@ -67,7 +69,7 @@ def lembrete():
     if request.method == 'DELETE':
         id_lembrete = request.args.get('id')
         try:
-            logging.info('Lembrete deletado.')
+            logging.info(f'Lembrete deletado pelo usuario {usuario_atual}.')
 
             return jsonify(LembreteService.delete(id_lembrete))
         except AssertionError as error:
@@ -97,10 +99,13 @@ def find_lembrete():
 @lembretes.route("/api/lembrete/visualizar", methods=['PUT'])
 @jwt_required()
 def lembrete_visualizado():
-    logging.info('Rota /api/lembrete/visualizar acessada.')
+    usuario_atual = get_jwt_identify().get('nome')
+
+    logging.info(f'Rota /api/lembrete/visualizar acessada pelo usuario {usuario_atual}.')
 
     id_lembrete = request.args.get('id')
     try: 
+        logging.info(f'Lembrete visualizado pelo usuario {usuario_atual}.')
         return LembreteService.lembrete_visualizado(id_lembrete)
     except AssertionError as error:
         logging.error(f'Erro ao visualizar lembrete: {error}')

@@ -1,7 +1,7 @@
 from flask import Blueprint, request, jsonify
 import logging
 from repository.AlunoRepository import AlunoRepository
-from flask_jwt_extended import jwt_required
+from flask_jwt_extended import jwt_required, get_jwt_identify
 
 from service.AlunoService import AlunoService
 
@@ -10,7 +10,9 @@ alunos = Blueprint("alunos", __name__)
 @alunos.route("/api/aluno", methods=['GET', 'POST', 'PUT', 'DELETE'])
 @jwt_required()
 def aluno():
-    logging.info('Rota /api/aluno acessada.')
+    usuario_atual = get_jwt_identify().get('nome')
+
+    logging.info(f'Rota /api/aluno acessada pelo usuario {usuario_atual}.')
 
     if request.method == 'GET':
         id_aluno = request.args.get('id')
@@ -32,7 +34,7 @@ def aluno():
         ausente = False
         
         try:
-            logging.info('Aluno registrado.')
+            logging.info(f'Aluno registrado pelo usuario {usuario_atual}.')
 
             return AlunoService.register(id_usuario=id_usuario, status=status, nome=nome, ra=ra, ausente=ausente)
         except AssertionError as error:
@@ -51,7 +53,7 @@ def aluno():
         ausente = False
 
         try:
-            logging.info('Aluno editado.')
+            logging.info(f'Aluno editado pelo usuario {usuario_atual}.')
 
             return AlunoService.update(id_aluno=id_aluno, status=status, nome=nome, ra=ra, ausente=ausente)
         except AssertionError as error:
@@ -62,7 +64,7 @@ def aluno():
     if request.method == 'DELETE':
         id_aluno = request.args.get('id')
         try:
-            logging.info('Aluno deletado.')
+            logging.info(f'Aluno deletado pelo usuario {usuario_atual}.')
 
             return jsonify(AlunoService.delete(id_aluno))
         except AssertionError as error:

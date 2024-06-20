@@ -3,7 +3,7 @@ import logging
 
 from repository.PresencaRepository import PresencaRepository
 
-from flask_jwt_extended import jwt_required
+from flask_jwt_extended import jwt_required, get_jwt_identify
 from service.PresencaService import PresencaService
 
 presencas = Blueprint("presencas", __name__)
@@ -11,7 +11,8 @@ presencas = Blueprint("presencas", __name__)
 @presencas.route("/api/presenca", methods=['GET', 'POST', 'PUT', 'DELETE'])
 @jwt_required()
 def presencas_main():
-    logging.info('Rota /api/presenca acessada.')
+    usuario_atual = get_jwt_identify().get('nome')
+    logging.info(f'Rota /api/presenca acessada pelo usuario {usuario_atual}.')
     if request.method == 'GET':
         id_presenca = request.args.get('id')
         try:
@@ -30,7 +31,7 @@ def presencas_main():
         horario = data.get('horario', 'NOT_FOUND')
 
         try:
-            logging.info('Presença registrada.')
+            logging.info(f'Presença registrada pelo usuario {usuario_atual}.')
 
             return PresencaService.register(id_aluno=id_aluno, id_chamada=id_chamada, status=status, tipo_presenca=tipo_presenca, horario=horario)
         except AssertionError as error:
@@ -48,7 +49,7 @@ def presencas_main():
         horario = data.get('horario', 'NOT_FOUND')
 
         try:
-            logging.info('Presença editada.')
+            logging.info(f'Presença editada pelo usuario {usuario_atual}.')
 
             return PresencaService.update(id_presenca=id_presenca, id_aluno=id_aluno, id_chamada=id_chamada, status=status, tipo_presenca=tipo_presenca, horario=horario)
         except AssertionError as error:
@@ -58,7 +59,7 @@ def presencas_main():
     if request.method == 'DELETE':
         id_presenca = request.args.get('id')
         try:
-            logging.info('Presença deletada.')
+            logging.info(f'Presença deletada pelo usuario {usuario_atual}.')
             
             return jsonify(PresencaService.delete(id_presenca))
         except AssertionError as error:
@@ -68,7 +69,9 @@ def presencas_main():
 @presencas.route("/api/presenca/ra", methods=['POST'])
 @jwt_required()
 def marcar_presenca_pelo_ra():
-    logging.info('Rota /api/presenca/ra acessada.')
+    usuario_atual = get_jwt_identify().get('nome')
+
+    logging.info(f'Rota /api/presenca/ra acessada pelo usuario {usuario_atual}.')
     data = request.json
 
     ra = data.get('ra')
@@ -76,6 +79,7 @@ def marcar_presenca_pelo_ra():
     id_manual = data.get('id_manual')
 
     try:
+        logging.info(f'Presença registrada para o ra: {ra} pelo usuario {usuario_atual}')
         return PresencaService.marcar_presenca_pelo_ra(ra, cargo_manual, id_manual)
     except AssertionError as error:
         logging.error(f'Erro ao marcar presença pelo ra: {error}')    

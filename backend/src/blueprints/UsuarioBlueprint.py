@@ -1,6 +1,6 @@
 from flask import Blueprint, request, jsonify,session
 import logging
-from flask_jwt_extended import jwt_required,create_access_token
+from flask_jwt_extended import jwt_required,create_access_token, get_jwt_identify
 import requests, os
 from datetime import datetime
 
@@ -11,6 +11,7 @@ usuarios = Blueprint("usuario", __name__)
 @usuarios.route("/api/usuario", methods=['GET', 'POST', 'PUT', 'DELETE'])
 @jwt_required()
 def usuario():
+    usuario_atual = get_jwt_identify().get('nome')
     logging.info('Rota /api/usuario acessada.')
     if request.method == 'GET':
         id_usuario = request.args.get('id')
@@ -31,7 +32,7 @@ def usuario():
         cargo = data.get('cargo', 'NOT_FOUND')
 
         try:
-            logging.info('Usuario registrado.')
+            logging.info(f'Usuario registrado pelo usuario {usuario_atual}.')
 
             return UsuarioService.register(status=status, login=login, senha=senha, nome=nome, ra=ra, cargo=cargo)
         except AssertionError as error:
@@ -50,7 +51,7 @@ def usuario():
         cargo = data.get('cargo', 'NOT_FOUND')
 
         try:
-            logging.info('Usuario editado.')
+            logging.info(f'Usuario editado pelo usuario {usuario_atual}.')
 
             return UsuarioService.update(id_usuario=id_usuario, status=status, login=login, senha=senha, nome=nome, ra=ra, cargo=cargo)
         except AssertionError as error:
@@ -60,7 +61,7 @@ def usuario():
     if request.method == 'DELETE':
         id_usuario = request.args.get('id')
         try:
-            logging.info('Usuario deletado.')
+            logging.info(f'Usuario deletado pelo usuario {usuario_atual}.')
 
             return jsonify(UsuarioService.delete(id_usuario))
         except AssertionError as error:
