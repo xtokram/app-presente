@@ -32,7 +32,7 @@ def professor():
         id_professor = data.get('id_professor', 'NOT_FOUND')
         
         try:
-            logging.info(f'chamada registrada pelo usuario {usuario_atual}.')
+            logging.info(f'chamada da turma {id_turma} registrada pelo usuario {usuario_atual}.')
 
             return ChamadaService.register(id_turma=id_turma,id_professor=id_professor, status=status, abertura=abertura, encerramento=encerramento)
         except AssertionError as error:
@@ -50,7 +50,7 @@ def professor():
         abertura = data.get('abertura', 'NOT_FOUND')
         encerramento = data.get('encerramento', 'NOT_FOUND')
         try:
-            logging.info(f'Chamada editada pelo usuario {usuario_atual}.')
+            logging.info(f'Chamada da turma {id_turma} editada pelo usuario {usuario_atual}.')
 
             return ChamadaService.update(id_chamada=id_chamada, id_turma=id_turma, id_professor=id_professor, status=status, abertura=abertura, encerramento=encerramento)
         except AssertionError as error:
@@ -62,7 +62,7 @@ def professor():
         id_chamada = request.args.get('id')
 
         try:
-            logging.info(f'Chamada deletada deletada pelo usuario {usuario_atual}.')
+            logging.info(f'Chamada {id_chamada} deletada deletada pelo usuario {usuario_atual}.')
 
             return jsonify(ChamadaService.delete(id_chamada))
         except AssertionError as error:
@@ -113,7 +113,7 @@ def fechar_chamada():
 
     id_chamada = request.args.get('id')
     try:
-        logging.error(f'Chamada fechada pelo usuario {usuario_atual}')
+        logging.error(f'Chamada com id {id_chamada} fechada pelo usuario {usuario_atual}')
         return ChamadaService.fechar_chamada(id_chamada)
     except AssertionError as error:
         logging.error(f'Erro ao fechar chamada: {error}')
@@ -128,7 +128,7 @@ def updateAll():
     logging.info(f'Rota /api/chamada/updateAll acessada pelo usuario {usuario_atual}.')
 
     try:
-        logging.error(f'Chamada fechada pelo usuario {usuario_atual}')
+        logging.error(f'todas as chamadas fechada pelo usuario {usuario_atual}')
         return ChamadaRepository.update_all()
     except Exception as error:
         logging.error(f'Erro ao verificar e atualizar todas as chamadas: {error}')

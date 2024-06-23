@@ -38,7 +38,7 @@ def painel():
 
         print(data)
         try:
-            logging.info(f'Painel registrado pelo usuario {usuario_atual}.')
+            logging.info(f'Painel com id {id_secretaria} registrado pelo usuario {usuario_atual}.')
 
             return PainelService.register(id_configuracao=id_configuracao, id_secretaria=id_secretaria, total_ativo=total_ativo, total_ausentes=total_ausentes, total_presentes=total_presentes, total_presentes_curso=total_presentes_curso, total_ativo_curso=total_ativo_curso, total_ausente_curso=total_ausente_curso, status=status, data_criado=data_criado)
         except AssertionError as error:
@@ -61,7 +61,7 @@ def painel():
         total_ausente_curso = data.get('total_ausente_curso', 'NOT_FOUND')
 
         try:
-            logging.info(f'Painel editado pelo usuario {usuario_atual}.')
+            logging.info(f'Painel com id {id_painel} editado pelo usuario {usuario_atual}.')
 
             return PainelService.update(id_painel=id_painel, id_configuracao=id_configuracao, id_secretaria=id_secretaria, total_ativo=total_ativo, total_ausentes=total_ausentes, total_presentes=total_presentes, total_presentes_curso=total_presentes_curso, total_ativo_curso=total_ativo_curso, total_ausente_curso=total_ausente_curso, status=status, data_criado=data_criado)
         except AssertionError as error:
@@ -71,7 +71,7 @@ def painel():
     if request.method == 'DELETE':
         id_painel = request.args.get('id')
         try:
-            logging.info(f'Painel deletado pelo usuario {usuario_atual}.')
+            logging.info(f'Painel com id {id_painel} deletado pelo usuario {usuario_atual}.')
 
             return jsonify(PainelService.delete(id_painel))
         except AssertionError as error:

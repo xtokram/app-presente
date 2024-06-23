@@ -34,7 +34,7 @@ def turma():
         curso = data.get('curso', 'NOT_FOUND')
 
         try:
-            logging.info(f'Turma registrada pelo usuario {usuario_atual}.')
+            logging.info(f'Turma {nome} registrada pelo usuario {usuario_atual}.')
 
             return TurmaService.post_turma(status, id_materia, nome, ano, semestre, turno, modalidade, curso)
         except AssertionError as error:
@@ -55,7 +55,7 @@ def turma():
         curso = data.get('curso', 'NOT_FOUND')
 
         try:
-            logging.info(f'Turma editada pelo usuario {usuario_atual}.')
+            logging.info(f'Turma com id {id_materia} editada pelo usuario {usuario_atual}.')
 
             return TurmaService.update(id_turma=id_turma, id_materia=id_materia, status=status, nome=nome, ano=ano, semestre=semestre, turno=turno, modalidade=modalidade, curso=curso)
         except AssertionError as error:
@@ -66,7 +66,7 @@ def turma():
         id_turma = request.args.get('id')
 
         try:
-            logging.info(f'Turma deletada pelo usuario {usuario_atual}.')
+            logging.info(f'Turma com id {id_turma} deletada pelo usuario {usuario_atual}.')
 
             return jsonify(TurmaService.delete(id_turma))
         except AssertionError as error:
@@ -82,7 +82,7 @@ def listar_all_turmas():
 @turmas.route("/api/turma/cadastrarAluno", methods=['POST'])
 @jwt_required()
 def cadastrar_aluno():
-    usuario_atual = get_jwt_identity().nome
+    usuario_atual = get_jwt_identity()
     logging.info('Rota /api/turma/cadastrarAluno acessada.')
     data = request.json
 
@@ -99,6 +99,7 @@ def cadastrar_aluno():
 @turmas.route("/api/turma/cadastrarProfessor", methods=['POST'])
 @jwt_required()
 def cadastrar_professor():
+    usuario_atual = get_jwt_identity()
     logging.info('Rota /api/turma/cadastrarProfessor acessada.')
     data = request.json
 
@@ -106,6 +107,7 @@ def cadastrar_professor():
     id_professor = data['id_professor']
 
     try:
+        logging.info(f'Professor {id_professor} registrado na turma {id_turma} pelo usuario {usuario_atual}')
         return TurmaService.cadastrar_professor(id_turma, id_professor)
     except AssertionError as error:
         logging.error(f'Erro ao cadastrar professor na turma: {error}')

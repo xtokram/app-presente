@@ -53,14 +53,14 @@ def create_app(config_file):
         format="%(asctime)s %(levelname)s %(message)s",
         datefmt="%Y-%m-%d %H:%M:%S",
         handlers=[
-            logging.FileHandler("backend.log"),
+            logging.FileHandler("/data/backend.log"),
             logging.StreamHandler()
         ]             
     )
 
     formatter = CustomJSONFormatter()
 
-    json_handler = logging.FileHandler('backend.log')
+    json_handler = logging.FileHandler('/data/backend.log')
     json_handler.setFormatter(formatter)
 
     json_logger = logging.getLogger('json_logger')

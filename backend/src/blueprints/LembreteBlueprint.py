@@ -38,7 +38,7 @@ def lembrete():
         
 
         try:
-            logging.info(f'Lembrete registrado pelo usuario {usuario_atual}.')
+            logging.info(f'Lembrete da secretaria {id_secretaria} registrado pelo usuario {usuario_atual}.')
 
             return LembreteService.register(criacao=criacao, status=status, id_secretaria=id_secretaria,  destinatario_cargo=destinatario_cargo, destinatario_id=destinatario_id, titulo=titulo, mensagem=mensagem)
         except AssertionError as error:
@@ -59,7 +59,7 @@ def lembrete():
         criacao = data.get('criacao', None)
         
         try:
-            logging.info(f'Lembrete editado pelo usuario {usuario_atual}.')
+            logging.info(f'Lembrete com id {id_lembrete} editado pelo usuario {usuario_atual}.')
 
             return LembreteService.update(id_lembrete=id_lembrete, id_secretaria=id_secretaria, status=status, destinatario_cargo=destinatario_cargo, destinatario_id=destinatario_id, titulo=titulo, mensagem=mensagem, visualizacao=visualizacao, criacao=criacao)
         except AssertionError as error:
@@ -69,7 +69,7 @@ def lembrete():
     if request.method == 'DELETE':
         id_lembrete = request.args.get('id')
         try:
-            logging.info(f'Lembrete deletado pelo usuario {usuario_atual}.')
+            logging.info(f'Lembrete com id {id_lembrete} deletado pelo usuario {usuario_atual}.')
 
             return jsonify(LembreteService.delete(id_lembrete))
         except AssertionError as error:
