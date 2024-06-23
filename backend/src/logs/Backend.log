@@ -1,0 +1,2225 @@
+2024-06-20 17:38:57 INFO Aplicativo inicializado com sucesso.
+2024-06-20 17:38:57 INFO Serving on http://0.0.0.0:5000
+2024-06-21 19:57:29 INFO Aplicativo inicializado com sucesso.
+2024-06-21 19:57:29 INFO Serving on http://0.0.0.0:5000
+2024-06-21 19:58:38 WARNING Task queue depth is 1
+2024-06-21 19:58:38 WARNING Task queue depth is 1
+2024-06-21 19:58:38 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-21 19:58:38 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-21 19:58:38 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-21 19:58:39 INFO id_usuario <RedisSession {'_user_id': 30, '_fresh': True, '_id': 'ff34d8ebd8913ed7eb0b48b702b9c1f8f00070f9fed994d6ab14ffd2880dc166d0d62acf05fd5e69ca5d1468c854df38b41e1abcf6ee3a25741bb7e403014f90', 'user_id': 30}>
+2024-06-21 19:58:39 INFO Usuário lolo logado com sucesso.
+2024-06-21 19:58:59 WARNING Task queue depth is 2
+2024-06-21 19:59:00 WARNING Task queue depth is 2
+2024-06-21 19:59:00 WARNING Task queue depth is 2
+2024-06-21 19:59:00 WARNING Task queue depth is 1
+2024-06-21 19:59:00 WARNING Task queue depth is 1
+2024-06-21 19:59:00 WARNING Task queue depth is 1
+2024-06-21 19:59:00 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-21 19:59:00 WARNING Task queue depth is 1
+2024-06-21 19:59:00 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-21 19:59:00 WARNING Task queue depth is 2
+2024-06-21 19:59:00 WARNING Task queue depth is 3
+2024-06-21 19:59:00 INFO id_usuario <RedisSession {'_user_id': 30, '_fresh': True, '_id': 'ff34d8ebd8913ed7eb0b48b702b9c1f8f00070f9fed994d6ab14ffd2880dc166d0d62acf05fd5e69ca5d1468c854df38b41e1abcf6ee3a25741bb7e403014f90', 'user_id': 30}>
+2024-06-21 19:59:00 INFO Usuário lolo logado com sucesso.
+2024-06-21 19:59:21 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-21 19:59:21 INFO id_usuario <RedisSession {'_user_id': 30, '_fresh': True, '_id': 'ff34d8ebd8913ed7eb0b48b702b9c1f8f00070f9fed994d6ab14ffd2880dc166d0d62acf05fd5e69ca5d1468c854df38b41e1abcf6ee3a25741bb7e403014f90', 'user_id': 30}>
+2024-06-21 19:59:21 INFO Usuário lolo logado com sucesso.
+2024-06-21 19:59:42 INFO id_usuario <RedisSession {'_user_id': 30, '_fresh': True, '_id': 'ff34d8ebd8913ed7eb0b48b702b9c1f8f00070f9fed994d6ab14ffd2880dc166d0d62acf05fd5e69ca5d1468c854df38b41e1abcf6ee3a25741bb7e403014f90', 'user_id': 30}>
+2024-06-21 19:59:42 INFO Usuário lolo logado com sucesso.
+2024-06-21 20:01:48 ERROR Exception on /api/login [POST]
+Traceback (most recent call last):
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 276, in connect
+    sock = self.retry.call_with_retry(
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\retry.py", line 51, in call_with_retry
+    raise error
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\retry.py", line 46, in call_with_retry
+    return do()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 277, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 747, in _connect
+    sock = super()._connect()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 639, in _connect
+    raise err
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 627, in _connect
+    sock.connect(socket_address)
+TimeoutError: [WinError 10060] Uma tentativa de conexão falhou porque o componente conectado não respondeu
+corretamente após um período de tempo ou a conexão estabelecida falhou
+porque o host conectado não respondeu
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 2529, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 1826, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 1847, in finalize_request
+    response = self.process_response(response)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 2344, in process_response
+    self.session_interface.save_session(self, ctx.session, response)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask_session\base.py", line 305, in save_session
+    self._upsert_session(app.permanent_session_lifetime, session, store_id)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask_session\redis\redis.py", line 81, in _upsert_session
+    self.client.set(
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\commands\core.py", line 2342, in set
+    return self.execute_command("SET", *pieces, **options)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\client.py", line 542, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 1109, in get_connection
+    connection.connect()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 280, in connect
+    raise TimeoutError("Timeout connecting to server")
+redis.exceptions.TimeoutError: Timeout connecting to server
+2024-06-21 20:02:09 ERROR Exception on /api/login [POST]
+Traceback (most recent call last):
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 276, in connect
+    sock = self.retry.call_with_retry(
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\retry.py", line 51, in call_with_retry
+    raise error
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\retry.py", line 46, in call_with_retry
+    return do()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 277, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 747, in _connect
+    sock = super()._connect()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 639, in _connect
+    raise err
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 627, in _connect
+    sock.connect(socket_address)
+TimeoutError: [WinError 10060] Uma tentativa de conexão falhou porque o componente conectado não respondeu
+corretamente após um período de tempo ou a conexão estabelecida falhou
+porque o host conectado não respondeu
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 2529, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 1826, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 1847, in finalize_request
+    response = self.process_response(response)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 2344, in process_response
+    self.session_interface.save_session(self, ctx.session, response)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask_session\base.py", line 305, in save_session
+    self._upsert_session(app.permanent_session_lifetime, session, store_id)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask_session\redis\redis.py", line 81, in _upsert_session
+    self.client.set(
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\commands\core.py", line 2342, in set
+    return self.execute_command("SET", *pieces, **options)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\client.py", line 542, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 1109, in get_connection
+    connection.connect()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 280, in connect
+    raise TimeoutError("Timeout connecting to server")
+redis.exceptions.TimeoutError: Timeout connecting to server
+2024-06-21 20:02:30 ERROR Exception on /api/login [POST]
+Traceback (most recent call last):
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 276, in connect
+    sock = self.retry.call_with_retry(
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\retry.py", line 51, in call_with_retry
+    raise error
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\retry.py", line 46, in call_with_retry
+    return do()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 277, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 747, in _connect
+    sock = super()._connect()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 639, in _connect
+    raise err
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 627, in _connect
+    sock.connect(socket_address)
+TimeoutError: [WinError 10060] Uma tentativa de conexão falhou porque o componente conectado não respondeu
+corretamente após um período de tempo ou a conexão estabelecida falhou
+porque o host conectado não respondeu
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 2529, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 1826, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 1847, in finalize_request
+    response = self.process_response(response)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 2344, in process_response
+    self.session_interface.save_session(self, ctx.session, response)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask_session\base.py", line 305, in save_session
+    self._upsert_session(app.permanent_session_lifetime, session, store_id)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask_session\redis\redis.py", line 81, in _upsert_session
+    self.client.set(
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\commands\core.py", line 2342, in set
+    return self.execute_command("SET", *pieces, **options)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\client.py", line 542, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 1109, in get_connection
+    connection.connect()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 280, in connect
+    raise TimeoutError("Timeout connecting to server")
+redis.exceptions.TimeoutError: Timeout connecting to server
+2024-06-21 20:02:52 ERROR Exception on /api/login [POST]
+Traceback (most recent call last):
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 276, in connect
+    sock = self.retry.call_with_retry(
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\retry.py", line 51, in call_with_retry
+    raise error
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\retry.py", line 46, in call_with_retry
+    return do()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 277, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 747, in _connect
+    sock = super()._connect()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 639, in _connect
+    raise err
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 627, in _connect
+    sock.connect(socket_address)
+TimeoutError: [WinError 10060] Uma tentativa de conexão falhou porque o componente conectado não respondeu
+corretamente após um período de tempo ou a conexão estabelecida falhou
+porque o host conectado não respondeu
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 2529, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 1826, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 1847, in finalize_request
+    response = self.process_response(response)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 2344, in process_response
+    self.session_interface.save_session(self, ctx.session, response)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask_session\base.py", line 305, in save_session
+    self._upsert_session(app.permanent_session_lifetime, session, store_id)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask_session\redis\redis.py", line 81, in _upsert_session
+    self.client.set(
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\commands\core.py", line 2342, in set
+    return self.execute_command("SET", *pieces, **options)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\client.py", line 542, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 1109, in get_connection
+    connection.connect()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 280, in connect
+    raise TimeoutError("Timeout connecting to server")
+redis.exceptions.TimeoutError: Timeout connecting to server
+2024-06-21 20:04:43 INFO Aplicativo inicializado com sucesso.
+2024-06-21 20:04:43 INFO Serving on http://0.0.0.0:5000
+2024-06-21 20:04:44 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-21 20:04:44 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-21 20:04:44 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-21 20:04:44 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-21 20:04:45 DEBUG http://192.168.18.44:5055 "POST / HTTP/1.1" 200 2
+2024-06-21 20:04:45 DEBUG http://192.168.18.44:5055 "POST / HTTP/1.1" 200 2
+2024-06-21 20:04:45 DEBUG http://192.168.18.44:5055 "POST / HTTP/1.1" 200 2
+2024-06-21 20:04:45 DEBUG http://192.168.18.44:5055 "POST / HTTP/1.1" 200 2
+2024-06-21 20:04:58 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-21 20:04:58 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-21 20:04:58 WARNING Task queue depth is 1
+2024-06-21 20:04:59 DEBUG http://192.168.18.44:5055 "POST / HTTP/1.1" 200 2
+2024-06-21 20:04:59 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-21 20:04:59 DEBUG http://192.168.18.44:5055 "POST / HTTP/1.1" 200 2
+2024-06-21 20:04:59 DEBUG http://192.168.18.44:5055 "POST / HTTP/1.1" 200 2
+2024-06-21 20:04:59 INFO id_usuario <RedisSession {'_user_id': 30, '_fresh': True, '_id': 'ff34d8ebd8913ed7eb0b48b702b9c1f8f00070f9fed994d6ab14ffd2880dc166d0d62acf05fd5e69ca5d1468c854df38b41e1abcf6ee3a25741bb7e403014f90', 'user_id': 30}>
+2024-06-21 20:04:59 INFO Usuário lolo logado com sucesso.
+2024-06-21 20:04:59 INFO id_usuario <RedisSession {'_user_id': 30, '_fresh': True, '_id': 'ff34d8ebd8913ed7eb0b48b702b9c1f8f00070f9fed994d6ab14ffd2880dc166d0d62acf05fd5e69ca5d1468c854df38b41e1abcf6ee3a25741bb7e403014f90', 'user_id': 30}>
+2024-06-21 20:04:59 INFO Usuário lolo logado com sucesso.
+2024-06-21 20:05:07 WARNING Task queue depth is 1
+2024-06-21 20:05:07 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-21 20:05:07 WARNING Task queue depth is 1
+2024-06-21 20:05:07 WARNING Task queue depth is 2
+2024-06-21 20:05:07 WARNING Task queue depth is 3
+2024-06-21 20:05:07 DEBUG http://192.168.18.44:5055 "POST / HTTP/1.1" 200 2
+2024-06-21 20:05:07 WARNING Task queue depth is 2
+2024-06-21 20:05:07 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-21 20:05:07 DEBUG http://192.168.18.44:5055 "POST / HTTP/1.1" 200 2
+2024-06-21 20:05:07 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-21 20:05:07 DEBUG http://192.168.18.44:5055 "POST / HTTP/1.1" 200 2
+2024-06-21 20:05:07 INFO id_usuario <RedisSession {'_user_id': 30, '_fresh': True, '_id': 'ff34d8ebd8913ed7eb0b48b702b9c1f8f00070f9fed994d6ab14ffd2880dc166d0d62acf05fd5e69ca5d1468c854df38b41e1abcf6ee3a25741bb7e403014f90', 'user_id': 30}>
+2024-06-21 20:05:07 INFO Usuário lolo logado com sucesso.
+2024-06-21 20:05:07 INFO id_usuario <RedisSession {'_user_id': 30, '_fresh': True, '_id': 'ff34d8ebd8913ed7eb0b48b702b9c1f8f00070f9fed994d6ab14ffd2880dc166d0d62acf05fd5e69ca5d1468c854df38b41e1abcf6ee3a25741bb7e403014f90', 'user_id': 30}>
+2024-06-21 20:05:07 INFO Usuário lolo logado com sucesso.
+2024-06-21 20:06:18 WARNING Task queue depth is 1
+2024-06-21 20:06:18 WARNING Task queue depth is 2
+2024-06-21 20:06:18 WARNING Task queue depth is 3
+2024-06-21 20:06:18 WARNING Task queue depth is 4
+2024-06-21 20:06:30 WARNING Task queue depth is 5
+2024-06-21 20:06:30 WARNING Task queue depth is 6
+2024-06-21 20:06:30 WARNING Task queue depth is 7
+2024-06-21 20:06:30 WARNING Task queue depth is 8
+2024-06-21 20:06:30 WARNING Task queue depth is 9
+2024-06-21 20:08:00 INFO Aplicativo inicializado com sucesso.
+2024-06-21 20:08:00 INFO Serving on http://0.0.0.0:5000
+2024-06-21 20:08:00 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-21 20:08:00 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-21 20:08:00 DEBUG http://192.168.18.44:5055 "POST / HTTP/1.1" 200 2
+2024-06-21 20:08:00 DEBUG http://192.168.18.44:5055 "POST / HTTP/1.1" 200 2
+2024-06-21 20:08:10 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-21 20:08:10 WARNING Task queue depth is 1
+2024-06-21 20:08:10 DEBUG http://192.168.18.44:5055 "POST / HTTP/1.1" 200 2
+2024-06-21 20:08:10 WARNING Task queue depth is 1
+2024-06-21 20:08:10 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-21 20:08:10 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-21 20:08:10 DEBUG http://192.168.18.44:5055 "POST / HTTP/1.1" 200 2
+2024-06-21 20:08:10 DEBUG http://192.168.18.44:5055 "POST / HTTP/1.1" 200 2
+2024-06-21 20:08:11 INFO id_usuario <RedisSession {'_user_id': 30, '_fresh': True, '_id': 'ff34d8ebd8913ed7eb0b48b702b9c1f8f00070f9fed994d6ab14ffd2880dc166d0d62acf05fd5e69ca5d1468c854df38b41e1abcf6ee3a25741bb7e403014f90', 'user_id': 30}>
+2024-06-21 20:08:11 INFO Usuário lolo logado com sucesso.
+2024-06-21 20:08:11 INFO id_usuario <RedisSession {'_user_id': 30, '_fresh': True, '_id': 'ff34d8ebd8913ed7eb0b48b702b9c1f8f00070f9fed994d6ab14ffd2880dc166d0d62acf05fd5e69ca5d1468c854df38b41e1abcf6ee3a25741bb7e403014f90', 'user_id': 30}>
+2024-06-21 20:08:11 INFO Usuário lolo logado com sucesso.
+2024-06-21 20:08:21 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-21 20:08:21 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-21 20:08:21 DEBUG http://192.168.18.44:5055 "POST / HTTP/1.1" 200 2
+2024-06-21 20:08:21 DEBUG http://192.168.18.44:5055 "POST / HTTP/1.1" 200 2
+2024-06-21 20:08:28 WARNING Task queue depth is 1
+2024-06-21 20:08:28 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-21 20:08:28 WARNING Task queue depth is 1
+2024-06-21 20:08:28 WARNING Task queue depth is 2
+2024-06-21 20:08:28 WARNING Task queue depth is 3
+2024-06-21 20:08:28 DEBUG http://192.168.18.44:5055 "POST / HTTP/1.1" 200 2
+2024-06-21 20:08:28 WARNING Task queue depth is 2
+2024-06-21 20:08:28 WARNING Task queue depth is 2
+2024-06-21 20:08:28 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-21 20:08:28 DEBUG http://192.168.18.44:5055 "POST / HTTP/1.1" 200 2
+2024-06-21 20:08:28 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-21 20:08:28 DEBUG http://192.168.18.44:5055 "POST / HTTP/1.1" 200 2
+2024-06-21 20:08:28 INFO id_usuario <RedisSession {'_user_id': 30, '_fresh': True, '_id': 'ff34d8ebd8913ed7eb0b48b702b9c1f8f00070f9fed994d6ab14ffd2880dc166d0d62acf05fd5e69ca5d1468c854df38b41e1abcf6ee3a25741bb7e403014f90', 'user_id': 30}>
+2024-06-21 20:08:28 INFO Usuário lolo logado com sucesso.
+2024-06-21 20:08:28 INFO id_usuario <RedisSession {'_user_id': 30, '_fresh': True, '_id': 'ff34d8ebd8913ed7eb0b48b702b9c1f8f00070f9fed994d6ab14ffd2880dc166d0d62acf05fd5e69ca5d1468c854df38b41e1abcf6ee3a25741bb7e403014f90', 'user_id': 30}>
+2024-06-21 20:08:28 INFO Usuário lolo logado com sucesso.
+2024-06-21 20:08:45 WARNING Task queue depth is 1
+2024-06-21 20:08:45 WARNING Task queue depth is 2
+2024-06-21 20:08:45 WARNING Task queue depth is 3
+2024-06-21 20:08:45 WARNING Task queue depth is 4
+2024-06-21 20:09:04 WARNING Task queue depth is 5
+2024-06-21 20:09:04 WARNING Task queue depth is 6
+2024-06-21 20:09:04 WARNING Task queue depth is 7
+2024-06-21 20:09:04 WARNING Task queue depth is 8
+2024-06-21 20:09:05 WARNING Task queue depth is 9
+2024-06-21 20:09:05 WARNING Task queue depth is 10
+2024-06-21 20:11:20 ERROR Exception on /api/login [POST]
+Traceback (most recent call last):
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 276, in connect
+    sock = self.retry.call_with_retry(
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\retry.py", line 51, in call_with_retry
+    raise error
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\retry.py", line 46, in call_with_retry
+    return do()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 277, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 747, in _connect
+    sock = super()._connect()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 639, in _connect
+    raise err
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 627, in _connect
+    sock.connect(socket_address)
+TimeoutError: [WinError 10060] Uma tentativa de conexão falhou porque o componente conectado não respondeu
+corretamente após um período de tempo ou a conexão estabelecida falhou
+porque o host conectado não respondeu
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 2529, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 1826, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 1847, in finalize_request
+    response = self.process_response(response)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 2344, in process_response
+    self.session_interface.save_session(self, ctx.session, response)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask_session\base.py", line 305, in save_session
+    self._upsert_session(app.permanent_session_lifetime, session, store_id)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask_session\redis\redis.py", line 81, in _upsert_session
+    self.client.set(
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\commands\core.py", line 2342, in set
+    return self.execute_command("SET", *pieces, **options)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\client.py", line 542, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 1109, in get_connection
+    connection.connect()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 280, in connect
+    raise TimeoutError("Timeout connecting to server")
+redis.exceptions.TimeoutError: Timeout connecting to server
+2024-06-21 20:11:20 ERROR Exception on /api/login [POST]
+Traceback (most recent call last):
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 276, in connect
+    sock = self.retry.call_with_retry(
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\retry.py", line 51, in call_with_retry
+    raise error
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\retry.py", line 46, in call_with_retry
+    return do()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 277, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 747, in _connect
+    sock = super()._connect()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 639, in _connect
+    raise err
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 627, in _connect
+    sock.connect(socket_address)
+TimeoutError: [WinError 10060] Uma tentativa de conexão falhou porque o componente conectado não respondeu
+corretamente após um período de tempo ou a conexão estabelecida falhou
+porque o host conectado não respondeu
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 2529, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 1826, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 1847, in finalize_request
+    response = self.process_response(response)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 2344, in process_response
+    self.session_interface.save_session(self, ctx.session, response)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask_session\base.py", line 305, in save_session
+    self._upsert_session(app.permanent_session_lifetime, session, store_id)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask_session\redis\redis.py", line 81, in _upsert_session
+    self.client.set(
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\commands\core.py", line 2342, in set
+    return self.execute_command("SET", *pieces, **options)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\client.py", line 542, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 1109, in get_connection
+    connection.connect()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 280, in connect
+    raise TimeoutError("Timeout connecting to server")
+redis.exceptions.TimeoutError: Timeout connecting to server
+2024-06-21 20:11:37 ERROR Exception on /api/login [POST]
+Traceback (most recent call last):
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 276, in connect
+    sock = self.retry.call_with_retry(
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\retry.py", line 51, in call_with_retry
+    raise error
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\retry.py", line 46, in call_with_retry
+    return do()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 277, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 747, in _connect
+    sock = super()._connect()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 639, in _connect
+    raise err
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 627, in _connect
+    sock.connect(socket_address)
+TimeoutError: [WinError 10060] Uma tentativa de conexão falhou porque o componente conectado não respondeu
+corretamente após um período de tempo ou a conexão estabelecida falhou
+porque o host conectado não respondeu
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 2529, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 1826, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 1847, in finalize_request
+    response = self.process_response(response)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 2344, in process_response
+    self.session_interface.save_session(self, ctx.session, response)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask_session\base.py", line 305, in save_session
+    self._upsert_session(app.permanent_session_lifetime, session, store_id)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask_session\redis\redis.py", line 81, in _upsert_session
+    self.client.set(
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\commands\core.py", line 2342, in set
+    return self.execute_command("SET", *pieces, **options)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\client.py", line 542, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 1109, in get_connection
+    connection.connect()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 280, in connect
+    raise TimeoutError("Timeout connecting to server")
+redis.exceptions.TimeoutError: Timeout connecting to server
+2024-06-21 20:11:37 ERROR Exception on /api/login [POST]
+Traceback (most recent call last):
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 276, in connect
+    sock = self.retry.call_with_retry(
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\retry.py", line 51, in call_with_retry
+    raise error
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\retry.py", line 46, in call_with_retry
+    return do()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 277, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 747, in _connect
+    sock = super()._connect()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 639, in _connect
+    raise err
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 627, in _connect
+    sock.connect(socket_address)
+TimeoutError: [WinError 10060] Uma tentativa de conexão falhou porque o componente conectado não respondeu
+corretamente após um período de tempo ou a conexão estabelecida falhou
+porque o host conectado não respondeu
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 2529, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 1826, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 1847, in finalize_request
+    response = self.process_response(response)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 2344, in process_response
+    self.session_interface.save_session(self, ctx.session, response)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask_session\base.py", line 305, in save_session
+    self._upsert_session(app.permanent_session_lifetime, session, store_id)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask_session\redis\redis.py", line 81, in _upsert_session
+    self.client.set(
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\commands\core.py", line 2342, in set
+    return self.execute_command("SET", *pieces, **options)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\client.py", line 542, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 1109, in get_connection
+    connection.connect()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 280, in connect
+    raise TimeoutError("Timeout connecting to server")
+redis.exceptions.TimeoutError: Timeout connecting to server
+2024-06-21 20:14:29 ERROR Request finalizing failed with an error while handling an error
+Traceback (most recent call last):
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 276, in connect
+    sock = self.retry.call_with_retry(
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\retry.py", line 51, in call_with_retry
+    raise error
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\retry.py", line 46, in call_with_retry
+    return do()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 277, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 747, in _connect
+    sock = super()._connect()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 639, in _connect
+    raise err
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 627, in _connect
+    sock.connect(socket_address)
+TimeoutError: [WinError 10060] Uma tentativa de conexão falhou porque o componente conectado não respondeu
+corretamente após um período de tempo ou a conexão estabelecida falhou
+porque o host conectado não respondeu
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 2529, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 1826, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 1847, in finalize_request
+    response = self.process_response(response)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 2344, in process_response
+    self.session_interface.save_session(self, ctx.session, response)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask_session\base.py", line 305, in save_session
+    self._upsert_session(app.permanent_session_lifetime, session, store_id)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask_session\redis\redis.py", line 81, in _upsert_session
+    self.client.set(
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\commands\core.py", line 2342, in set
+    return self.execute_command("SET", *pieces, **options)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\client.py", line 542, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 1109, in get_connection
+    connection.connect()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 280, in connect
+    raise TimeoutError("Timeout connecting to server")
+redis.exceptions.TimeoutError: Timeout connecting to server
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 276, in connect
+    sock = self.retry.call_with_retry(
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\retry.py", line 51, in call_with_retry
+    raise error
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\retry.py", line 46, in call_with_retry
+    return do()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 277, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 747, in _connect
+    sock = super()._connect()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 639, in _connect
+    raise err
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 627, in _connect
+    sock.connect(socket_address)
+TimeoutError: [WinError 10060] Uma tentativa de conexão falhou porque o componente conectado não respondeu
+corretamente após um período de tempo ou a conexão estabelecida falhou
+porque o host conectado não respondeu
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 1847, in finalize_request
+    response = self.process_response(response)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 2344, in process_response
+    self.session_interface.save_session(self, ctx.session, response)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask_session\base.py", line 305, in save_session
+    self._upsert_session(app.permanent_session_lifetime, session, store_id)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask_session\redis\redis.py", line 81, in _upsert_session
+    self.client.set(
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\commands\core.py", line 2342, in set
+    return self.execute_command("SET", *pieces, **options)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\client.py", line 542, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 1109, in get_connection
+    connection.connect()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 280, in connect
+    raise TimeoutError("Timeout connecting to server")
+redis.exceptions.TimeoutError: Timeout connecting to server
+2024-06-21 20:14:29 ERROR Request finalizing failed with an error while handling an error
+Traceback (most recent call last):
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 276, in connect
+    sock = self.retry.call_with_retry(
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\retry.py", line 51, in call_with_retry
+    raise error
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\retry.py", line 46, in call_with_retry
+    return do()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 277, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 747, in _connect
+    sock = super()._connect()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 639, in _connect
+    raise err
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 627, in _connect
+    sock.connect(socket_address)
+TimeoutError: [WinError 10060] Uma tentativa de conexão falhou porque o componente conectado não respondeu
+corretamente após um período de tempo ou a conexão estabelecida falhou
+porque o host conectado não respondeu
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 2529, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 1826, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 1847, in finalize_request
+    response = self.process_response(response)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 2344, in process_response
+    self.session_interface.save_session(self, ctx.session, response)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask_session\base.py", line 305, in save_session
+    self._upsert_session(app.permanent_session_lifetime, session, store_id)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask_session\redis\redis.py", line 81, in _upsert_session
+    self.client.set(
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\commands\core.py", line 2342, in set
+    return self.execute_command("SET", *pieces, **options)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\client.py", line 542, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 1109, in get_connection
+    connection.connect()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 280, in connect
+    raise TimeoutError("Timeout connecting to server")
+redis.exceptions.TimeoutError: Timeout connecting to server
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 276, in connect
+    sock = self.retry.call_with_retry(
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\retry.py", line 51, in call_with_retry
+    raise error
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\retry.py", line 46, in call_with_retry
+    return do()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 277, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 747, in _connect
+    sock = super()._connect()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 639, in _connect
+    raise err
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 627, in _connect
+    sock.connect(socket_address)
+TimeoutError: [WinError 10060] Uma tentativa de conexão falhou porque o componente conectado não respondeu
+corretamente após um período de tempo ou a conexão estabelecida falhou
+porque o host conectado não respondeu
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 1847, in finalize_request
+    response = self.process_response(response)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 2344, in process_response
+    self.session_interface.save_session(self, ctx.session, response)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask_session\base.py", line 305, in save_session
+    self._upsert_session(app.permanent_session_lifetime, session, store_id)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask_session\redis\redis.py", line 81, in _upsert_session
+    self.client.set(
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\commands\core.py", line 2342, in set
+    return self.execute_command("SET", *pieces, **options)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\client.py", line 542, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 1109, in get_connection
+    connection.connect()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 280, in connect
+    raise TimeoutError("Timeout connecting to server")
+redis.exceptions.TimeoutError: Timeout connecting to server
+2024-06-21 20:14:47 ERROR Request finalizing failed with an error while handling an error
+Traceback (most recent call last):
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 276, in connect
+    sock = self.retry.call_with_retry(
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\retry.py", line 51, in call_with_retry
+    raise error
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\retry.py", line 46, in call_with_retry
+    return do()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 277, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 747, in _connect
+    sock = super()._connect()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 639, in _connect
+    raise err
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 627, in _connect
+    sock.connect(socket_address)
+TimeoutError: [WinError 10060] Uma tentativa de conexão falhou porque o componente conectado não respondeu
+corretamente após um período de tempo ou a conexão estabelecida falhou
+porque o host conectado não respondeu
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 2529, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 1826, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 1847, in finalize_request
+    response = self.process_response(response)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 2344, in process_response
+    self.session_interface.save_session(self, ctx.session, response)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask_session\base.py", line 305, in save_session
+    self._upsert_session(app.permanent_session_lifetime, session, store_id)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask_session\redis\redis.py", line 81, in _upsert_session
+    self.client.set(
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\commands\core.py", line 2342, in set
+    return self.execute_command("SET", *pieces, **options)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\client.py", line 542, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 1109, in get_connection
+    connection.connect()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 280, in connect
+    raise TimeoutError("Timeout connecting to server")
+redis.exceptions.TimeoutError: Timeout connecting to server
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 276, in connect
+    sock = self.retry.call_with_retry(
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\retry.py", line 51, in call_with_retry
+    raise error
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\retry.py", line 46, in call_with_retry
+    return do()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 277, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 747, in _connect
+    sock = super()._connect()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 639, in _connect
+    raise err
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 627, in _connect
+    sock.connect(socket_address)
+TimeoutError: [WinError 10060] Uma tentativa de conexão falhou porque o componente conectado não respondeu
+corretamente após um período de tempo ou a conexão estabelecida falhou
+porque o host conectado não respondeu
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 1847, in finalize_request
+    response = self.process_response(response)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 2344, in process_response
+    self.session_interface.save_session(self, ctx.session, response)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask_session\base.py", line 305, in save_session
+    self._upsert_session(app.permanent_session_lifetime, session, store_id)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask_session\redis\redis.py", line 81, in _upsert_session
+    self.client.set(
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\commands\core.py", line 2342, in set
+    return self.execute_command("SET", *pieces, **options)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\client.py", line 542, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 1109, in get_connection
+    connection.connect()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 280, in connect
+    raise TimeoutError("Timeout connecting to server")
+redis.exceptions.TimeoutError: Timeout connecting to server
+2024-06-21 20:14:47 ERROR Request finalizing failed with an error while handling an error
+Traceback (most recent call last):
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 276, in connect
+    sock = self.retry.call_with_retry(
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\retry.py", line 51, in call_with_retry
+    raise error
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\retry.py", line 46, in call_with_retry
+    return do()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 277, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 747, in _connect
+    sock = super()._connect()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 639, in _connect
+    raise err
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 627, in _connect
+    sock.connect(socket_address)
+TimeoutError: [WinError 10060] Uma tentativa de conexão falhou porque o componente conectado não respondeu
+corretamente após um período de tempo ou a conexão estabelecida falhou
+porque o host conectado não respondeu
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 2529, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 1826, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 1847, in finalize_request
+    response = self.process_response(response)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 2344, in process_response
+    self.session_interface.save_session(self, ctx.session, response)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask_session\base.py", line 305, in save_session
+    self._upsert_session(app.permanent_session_lifetime, session, store_id)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask_session\redis\redis.py", line 81, in _upsert_session
+    self.client.set(
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\commands\core.py", line 2342, in set
+    return self.execute_command("SET", *pieces, **options)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\client.py", line 542, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 1109, in get_connection
+    connection.connect()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 280, in connect
+    raise TimeoutError("Timeout connecting to server")
+redis.exceptions.TimeoutError: Timeout connecting to server
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 276, in connect
+    sock = self.retry.call_with_retry(
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\retry.py", line 51, in call_with_retry
+    raise error
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\retry.py", line 46, in call_with_retry
+    return do()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 277, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 747, in _connect
+    sock = super()._connect()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 639, in _connect
+    raise err
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 627, in _connect
+    sock.connect(socket_address)
+TimeoutError: [WinError 10060] Uma tentativa de conexão falhou porque o componente conectado não respondeu
+corretamente após um período de tempo ou a conexão estabelecida falhou
+porque o host conectado não respondeu
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 1847, in finalize_request
+    response = self.process_response(response)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 2344, in process_response
+    self.session_interface.save_session(self, ctx.session, response)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask_session\base.py", line 305, in save_session
+    self._upsert_session(app.permanent_session_lifetime, session, store_id)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask_session\redis\redis.py", line 81, in _upsert_session
+    self.client.set(
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\commands\core.py", line 2342, in set
+    return self.execute_command("SET", *pieces, **options)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\client.py", line 542, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 1109, in get_connection
+    connection.connect()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 280, in connect
+    raise TimeoutError("Timeout connecting to server")
+redis.exceptions.TimeoutError: Timeout connecting to server
+2024-06-21 20:20:19 INFO Aplicativo inicializado com sucesso.
+2024-06-21 20:20:19 INFO Serving on http://0.0.0.0:5000
+2024-06-21 20:20:35 WARNING Task queue depth is 1
+2024-06-21 20:20:35 WARNING Task queue depth is 1
+2024-06-21 20:20:35 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-21 20:20:35 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-21 20:20:35 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-21 20:20:35 INFO id_usuario <RedisSession {'_user_id': 30, '_fresh': True, '_id': 'ff34d8ebd8913ed7eb0b48b702b9c1f8f00070f9fed994d6ab14ffd2880dc166d0d62acf05fd5e69ca5d1468c854df38b41e1abcf6ee3a25741bb7e403014f90', 'user_id': 30}>
+2024-06-21 20:20:35 INFO Usuário lolo logado com sucesso.
+2024-06-21 20:20:35 DEBUG http://192.168.18.44:5055 "POST / HTTP/1.1" 200 2
+2024-06-21 20:20:35 DEBUG http://192.168.18.44:5055 "POST / HTTP/1.1" 200 2
+2024-06-21 20:20:35 DEBUG http://192.168.18.44:5055 "POST / HTTP/1.1" 200 2
+2024-06-21 20:20:36 INFO id_usuario <RedisSession {'_user_id': 30, '_fresh': True, '_id': 'ff34d8ebd8913ed7eb0b48b702b9c1f8f00070f9fed994d6ab14ffd2880dc166d0d62acf05fd5e69ca5d1468c854df38b41e1abcf6ee3a25741bb7e403014f90', 'user_id': 30}>
+2024-06-21 20:20:36 INFO Usuário lolo logado com sucesso.
+2024-06-21 20:20:58 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-21 20:20:58 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-21 20:20:58 DEBUG http://192.168.18.44:5055 "POST / HTTP/1.1" 200 2
+2024-06-21 20:20:58 DEBUG http://192.168.18.44:5055 "POST / HTTP/1.1" 200 2
+2024-06-21 20:22:47 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-21 20:22:47 WARNING Task queue depth is 1
+2024-06-21 20:22:47 WARNING Task queue depth is 2
+2024-06-21 20:22:47 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-21 20:22:47 WARNING Task queue depth is 3
+2024-06-21 20:22:47 DEBUG http://192.168.18.44:5055 "POST / HTTP/1.1" 200 2
+2024-06-21 20:22:47 DEBUG http://192.168.18.44:5055 "POST / HTTP/1.1" 200 2
+2024-06-21 20:22:47 ERROR Erro na tentativa de realizar login: Login inválido!!
+2024-06-21 20:22:47 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-21 20:22:47 ERROR Erro na tentativa de realizar login: Login inválido!!
+2024-06-21 20:22:47 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-21 20:22:47 WARNING Task queue depth is 1
+2024-06-21 20:22:47 DEBUG http://192.168.18.44:5055 "POST / HTTP/1.1" 200 2
+2024-06-21 20:22:47 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-21 20:22:47 DEBUG http://192.168.18.44:5055 "POST / HTTP/1.1" 200 2
+2024-06-21 20:22:47 DEBUG http://192.168.18.44:5055 "POST / HTTP/1.1" 200 2
+2024-06-21 20:23:45 ERROR Exception on /api/login [POST]
+Traceback (most recent call last):
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 276, in connect
+    sock = self.retry.call_with_retry(
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\retry.py", line 51, in call_with_retry
+    raise error
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\retry.py", line 46, in call_with_retry
+    return do()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 277, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 747, in _connect
+    sock = super()._connect()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 639, in _connect
+    raise err
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 627, in _connect
+    sock.connect(socket_address)
+TimeoutError: [WinError 10060] Uma tentativa de conexão falhou porque o componente conectado não respondeu
+corretamente após um período de tempo ou a conexão estabelecida falhou
+porque o host conectado não respondeu
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 2529, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 1826, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 1847, in finalize_request
+    response = self.process_response(response)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 2344, in process_response
+    self.session_interface.save_session(self, ctx.session, response)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask_session\base.py", line 305, in save_session
+    self._upsert_session(app.permanent_session_lifetime, session, store_id)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask_session\redis\redis.py", line 81, in _upsert_session
+    self.client.set(
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\commands\core.py", line 2342, in set
+    return self.execute_command("SET", *pieces, **options)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\client.py", line 542, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 1109, in get_connection
+    connection.connect()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 280, in connect
+    raise TimeoutError("Timeout connecting to server")
+redis.exceptions.TimeoutError: Timeout connecting to server
+2024-06-21 20:23:45 ERROR Exception on /api/login [POST]
+Traceback (most recent call last):
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 276, in connect
+    sock = self.retry.call_with_retry(
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\retry.py", line 51, in call_with_retry
+    raise error
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\retry.py", line 46, in call_with_retry
+    return do()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 277, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 747, in _connect
+    sock = super()._connect()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 639, in _connect
+    raise err
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 627, in _connect
+    sock.connect(socket_address)
+TimeoutError: [WinError 10060] Uma tentativa de conexão falhou porque o componente conectado não respondeu
+corretamente após um período de tempo ou a conexão estabelecida falhou
+porque o host conectado não respondeu
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 2529, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 1826, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 1847, in finalize_request
+    response = self.process_response(response)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 2344, in process_response
+    self.session_interface.save_session(self, ctx.session, response)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask_session\base.py", line 305, in save_session
+    self._upsert_session(app.permanent_session_lifetime, session, store_id)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask_session\redis\redis.py", line 81, in _upsert_session
+    self.client.set(
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\commands\core.py", line 2342, in set
+    return self.execute_command("SET", *pieces, **options)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\client.py", line 542, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 1109, in get_connection
+    connection.connect()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 280, in connect
+    raise TimeoutError("Timeout connecting to server")
+redis.exceptions.TimeoutError: Timeout connecting to server
+2024-06-21 20:23:54 INFO Aplicativo inicializado com sucesso.
+2024-06-21 20:23:54 INFO Serving on http://0.0.0.0:5000
+2024-06-21 20:24:08 WARNING Task queue depth is 1
+2024-06-21 20:24:08 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-21 20:24:08 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-21 20:24:08 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-21 20:24:08 DEBUG http://192.168.18.44:5055 "POST / HTTP/1.1" 200 2
+2024-06-21 20:24:08 DEBUG http://192.168.18.44:5055 "POST / HTTP/1.1" 200 2
+2024-06-21 20:24:08 DEBUG http://192.168.18.44:5055 "POST / HTTP/1.1" 200 2
+2024-06-21 20:24:08 INFO id_usuario <RedisSession {'_user_id': 30, '_fresh': True, '_id': 'ff34d8ebd8913ed7eb0b48b702b9c1f8f00070f9fed994d6ab14ffd2880dc166d0d62acf05fd5e69ca5d1468c854df38b41e1abcf6ee3a25741bb7e403014f90', 'user_id': 30}>
+2024-06-21 20:24:08 INFO Usuário lolo logado com sucesso.
+2024-06-21 20:24:08 INFO id_usuario <RedisSession {'_user_id': 30, '_fresh': True, '_id': 'ff34d8ebd8913ed7eb0b48b702b9c1f8f00070f9fed994d6ab14ffd2880dc166d0d62acf05fd5e69ca5d1468c854df38b41e1abcf6ee3a25741bb7e403014f90', 'user_id': 30}>
+2024-06-21 20:24:08 INFO Usuário lolo logado com sucesso.
+2024-06-21 20:24:10 WARNING Task queue depth is 1
+2024-06-21 20:24:10 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-21 20:24:10 WARNING Task queue depth is 2
+2024-06-21 20:24:10 WARNING Task queue depth is 3
+2024-06-21 20:24:10 DEBUG http://192.168.18.44:5055 "POST / HTTP/1.1" 200 2
+2024-06-21 20:24:10 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-21 20:24:10 DEBUG http://192.168.18.44:5055 "POST / HTTP/1.1" 200 2
+2024-06-21 20:24:10 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-21 20:24:10 DEBUG http://192.168.18.44:5055 "POST / HTTP/1.1" 200 2
+2024-06-21 20:24:10 INFO id_usuario <RedisSession {'_user_id': 30, '_fresh': True, '_id': 'ff34d8ebd8913ed7eb0b48b702b9c1f8f00070f9fed994d6ab14ffd2880dc166d0d62acf05fd5e69ca5d1468c854df38b41e1abcf6ee3a25741bb7e403014f90', 'user_id': 30}>
+2024-06-21 20:24:10 INFO Usuário lolo logado com sucesso.
+2024-06-21 20:24:10 INFO id_usuario <RedisSession {'_user_id': 30, '_fresh': True, '_id': 'ff34d8ebd8913ed7eb0b48b702b9c1f8f00070f9fed994d6ab14ffd2880dc166d0d62acf05fd5e69ca5d1468c854df38b41e1abcf6ee3a25741bb7e403014f90', 'user_id': 30}>
+2024-06-21 20:24:10 INFO Usuário lolo logado com sucesso.
+2024-06-21 20:24:32 WARNING Task queue depth is 1
+2024-06-21 20:24:32 WARNING Task queue depth is 2
+2024-06-21 20:27:17 ERROR Exception on /api/login [POST]
+Traceback (most recent call last):
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 276, in connect
+    sock = self.retry.call_with_retry(
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\retry.py", line 51, in call_with_retry
+    raise error
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\retry.py", line 46, in call_with_retry
+    return do()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 277, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 639, in _connect
+    raise err
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 627, in _connect
+    sock.connect(socket_address)
+TimeoutError: [WinError 10060] Uma tentativa de conexão falhou porque o componente conectado não respondeu
+corretamente após um período de tempo ou a conexão estabelecida falhou
+porque o host conectado não respondeu
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 2529, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 1826, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 1847, in finalize_request
+    response = self.process_response(response)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 2344, in process_response
+    self.session_interface.save_session(self, ctx.session, response)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask_session\base.py", line 305, in save_session
+    self._upsert_session(app.permanent_session_lifetime, session, store_id)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask_session\redis\redis.py", line 81, in _upsert_session
+    self.client.set(
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\commands\core.py", line 2342, in set
+    return self.execute_command("SET", *pieces, **options)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\client.py", line 542, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 1109, in get_connection
+    connection.connect()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 280, in connect
+    raise TimeoutError("Timeout connecting to server")
+redis.exceptions.TimeoutError: Timeout connecting to server
+2024-06-21 20:27:17 ERROR Exception on /api/login [POST]
+Traceback (most recent call last):
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 276, in connect
+    sock = self.retry.call_with_retry(
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\retry.py", line 51, in call_with_retry
+    raise error
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\retry.py", line 46, in call_with_retry
+    return do()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 277, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 639, in _connect
+    raise err
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 627, in _connect
+    sock.connect(socket_address)
+TimeoutError: [WinError 10060] Uma tentativa de conexão falhou porque o componente conectado não respondeu
+corretamente após um período de tempo ou a conexão estabelecida falhou
+porque o host conectado não respondeu
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 2529, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 1826, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 1847, in finalize_request
+    response = self.process_response(response)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 2344, in process_response
+    self.session_interface.save_session(self, ctx.session, response)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask_session\base.py", line 305, in save_session
+    self._upsert_session(app.permanent_session_lifetime, session, store_id)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask_session\redis\redis.py", line 81, in _upsert_session
+    self.client.set(
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\commands\core.py", line 2342, in set
+    return self.execute_command("SET", *pieces, **options)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\client.py", line 542, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 1109, in get_connection
+    connection.connect()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 280, in connect
+    raise TimeoutError("Timeout connecting to server")
+redis.exceptions.TimeoutError: Timeout connecting to server
+2024-06-21 20:27:19 ERROR Exception on /api/login [POST]
+Traceback (most recent call last):
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 276, in connect
+    sock = self.retry.call_with_retry(
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\retry.py", line 51, in call_with_retry
+    raise error
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\retry.py", line 46, in call_with_retry
+    return do()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 277, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 639, in _connect
+    raise err
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 627, in _connect
+    sock.connect(socket_address)
+TimeoutError: [WinError 10060] Uma tentativa de conexão falhou porque o componente conectado não respondeu
+corretamente após um período de tempo ou a conexão estabelecida falhou
+porque o host conectado não respondeu
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 2529, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 1826, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 1847, in finalize_request
+    response = self.process_response(response)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 2344, in process_response
+    self.session_interface.save_session(self, ctx.session, response)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask_session\base.py", line 305, in save_session
+    self._upsert_session(app.permanent_session_lifetime, session, store_id)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask_session\redis\redis.py", line 81, in _upsert_session
+    self.client.set(
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\commands\core.py", line 2342, in set
+    return self.execute_command("SET", *pieces, **options)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\client.py", line 542, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 1109, in get_connection
+    connection.connect()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 280, in connect
+    raise TimeoutError("Timeout connecting to server")
+redis.exceptions.TimeoutError: Timeout connecting to server
+2024-06-21 20:27:19 ERROR Exception on /api/login [POST]
+Traceback (most recent call last):
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 276, in connect
+    sock = self.retry.call_with_retry(
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\retry.py", line 51, in call_with_retry
+    raise error
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\retry.py", line 46, in call_with_retry
+    return do()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 277, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 639, in _connect
+    raise err
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 627, in _connect
+    sock.connect(socket_address)
+TimeoutError: [WinError 10060] Uma tentativa de conexão falhou porque o componente conectado não respondeu
+corretamente após um período de tempo ou a conexão estabelecida falhou
+porque o host conectado não respondeu
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 2529, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 1826, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 1847, in finalize_request
+    response = self.process_response(response)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 2344, in process_response
+    self.session_interface.save_session(self, ctx.session, response)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask_session\base.py", line 305, in save_session
+    self._upsert_session(app.permanent_session_lifetime, session, store_id)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask_session\redis\redis.py", line 81, in _upsert_session
+    self.client.set(
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\commands\core.py", line 2342, in set
+    return self.execute_command("SET", *pieces, **options)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\client.py", line 542, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 1109, in get_connection
+    connection.connect()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 280, in connect
+    raise TimeoutError("Timeout connecting to server")
+redis.exceptions.TimeoutError: Timeout connecting to server
+2024-06-21 20:33:22 ERROR Erro ao conectar ao Redis: Timeout connecting to server
+2024-06-21 20:33:22 INFO Aplicativo inicializado com sucesso.
+2024-06-21 20:33:22 INFO Serving on http://0.0.0.0:5000
+2024-06-21 20:35:48 WARNING Task queue depth is 1
+2024-06-21 20:35:48 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-21 20:35:48 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-21 20:35:48 DEBUG http://192.168.18.44:5055 "POST / HTTP/1.1" 200 2
+2024-06-21 20:35:48 DEBUG http://192.168.18.44:5055 "POST / HTTP/1.1" 200 2
+2024-06-21 20:35:48 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-21 20:35:48 DEBUG http://192.168.18.44:5055 "POST / HTTP/1.1" 200 2
+2024-06-21 20:35:48 INFO id_usuario <RedisSession {'_user_id': 30, '_fresh': True, '_id': 'ff34d8ebd8913ed7eb0b48b702b9c1f8f00070f9fed994d6ab14ffd2880dc166d0d62acf05fd5e69ca5d1468c854df38b41e1abcf6ee3a25741bb7e403014f90', 'user_id': 30}>
+2024-06-21 20:35:48 INFO Usuário lolo logado com sucesso.
+2024-06-21 20:35:48 INFO id_usuario <RedisSession {'_user_id': 30, '_fresh': True, '_id': 'ff34d8ebd8913ed7eb0b48b702b9c1f8f00070f9fed994d6ab14ffd2880dc166d0d62acf05fd5e69ca5d1468c854df38b41e1abcf6ee3a25741bb7e403014f90', 'user_id': 30}>
+2024-06-21 20:35:48 INFO Usuário lolo logado com sucesso.
+2024-06-21 20:35:52 ERROR Exception on /api/login [POST]
+Traceback (most recent call last):
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 276, in connect
+    sock = self.retry.call_with_retry(
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\retry.py", line 46, in call_with_retry
+    return do()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 277, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 639, in _connect
+    raise err
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 627, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 2529, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 1826, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 1847, in finalize_request
+    response = self.process_response(response)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 2344, in process_response
+    self.session_interface.save_session(self, ctx.session, response)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask_session\base.py", line 305, in save_session
+    self._upsert_session(app.permanent_session_lifetime, session, store_id)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask_session\redis\redis.py", line 81, in _upsert_session
+    self.client.set(
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\commands\core.py", line 2342, in set
+    return self.execute_command("SET", *pieces, **options)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\client.py", line 542, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 1109, in get_connection
+    connection.connect()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 282, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to localhost:6379. Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente.
+2024-06-21 20:35:52 ERROR Exception on /api/login [POST]
+Traceback (most recent call last):
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 276, in connect
+    sock = self.retry.call_with_retry(
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\retry.py", line 46, in call_with_retry
+    return do()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 277, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 639, in _connect
+    raise err
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 627, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 2529, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 1826, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 1847, in finalize_request
+    response = self.process_response(response)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 2344, in process_response
+    self.session_interface.save_session(self, ctx.session, response)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask_session\base.py", line 305, in save_session
+    self._upsert_session(app.permanent_session_lifetime, session, store_id)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask_session\redis\redis.py", line 81, in _upsert_session
+    self.client.set(
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\commands\core.py", line 2342, in set
+    return self.execute_command("SET", *pieces, **options)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\client.py", line 542, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 1109, in get_connection
+    connection.connect()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 282, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to localhost:6379. Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente.
+2024-06-21 20:35:56 ERROR Request finalizing failed with an error while handling an error
+Traceback (most recent call last):
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 276, in connect
+    sock = self.retry.call_with_retry(
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\retry.py", line 46, in call_with_retry
+    return do()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 277, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 639, in _connect
+    raise err
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 627, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 2529, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 1826, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 1847, in finalize_request
+    response = self.process_response(response)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 2344, in process_response
+    self.session_interface.save_session(self, ctx.session, response)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask_session\base.py", line 305, in save_session
+    self._upsert_session(app.permanent_session_lifetime, session, store_id)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask_session\redis\redis.py", line 81, in _upsert_session
+    self.client.set(
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\commands\core.py", line 2342, in set
+    return self.execute_command("SET", *pieces, **options)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\client.py", line 542, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 1109, in get_connection
+    connection.connect()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 282, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to localhost:6379. Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 276, in connect
+    sock = self.retry.call_with_retry(
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\retry.py", line 46, in call_with_retry
+    return do()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 277, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 639, in _connect
+    raise err
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 627, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 1847, in finalize_request
+    response = self.process_response(response)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 2344, in process_response
+    self.session_interface.save_session(self, ctx.session, response)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask_session\base.py", line 305, in save_session
+    self._upsert_session(app.permanent_session_lifetime, session, store_id)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask_session\redis\redis.py", line 81, in _upsert_session
+    self.client.set(
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\commands\core.py", line 2342, in set
+    return self.execute_command("SET", *pieces, **options)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\client.py", line 542, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 1109, in get_connection
+    connection.connect()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 282, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to localhost:6379. Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente.
+2024-06-21 20:35:56 ERROR Request finalizing failed with an error while handling an error
+Traceback (most recent call last):
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 276, in connect
+    sock = self.retry.call_with_retry(
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\retry.py", line 46, in call_with_retry
+    return do()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 277, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 639, in _connect
+    raise err
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 627, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 2529, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 1826, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 1847, in finalize_request
+    response = self.process_response(response)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 2344, in process_response
+    self.session_interface.save_session(self, ctx.session, response)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask_session\base.py", line 305, in save_session
+    self._upsert_session(app.permanent_session_lifetime, session, store_id)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask_session\redis\redis.py", line 81, in _upsert_session
+    self.client.set(
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\commands\core.py", line 2342, in set
+    return self.execute_command("SET", *pieces, **options)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\client.py", line 542, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 1109, in get_connection
+    connection.connect()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 282, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to localhost:6379. Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 276, in connect
+    sock = self.retry.call_with_retry(
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\retry.py", line 46, in call_with_retry
+    return do()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 277, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 639, in _connect
+    raise err
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 627, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 1847, in finalize_request
+    response = self.process_response(response)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 2344, in process_response
+    self.session_interface.save_session(self, ctx.session, response)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask_session\base.py", line 305, in save_session
+    self._upsert_session(app.permanent_session_lifetime, session, store_id)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask_session\redis\redis.py", line 81, in _upsert_session
+    self.client.set(
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\commands\core.py", line 2342, in set
+    return self.execute_command("SET", *pieces, **options)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\client.py", line 542, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 1109, in get_connection
+    connection.connect()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 282, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to localhost:6379. Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente.
+2024-06-21 20:35:56 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-21 20:35:56 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-21 20:35:56 DEBUG http://192.168.18.44:5055 "POST / HTTP/1.1" 200 2
+2024-06-21 20:35:56 DEBUG http://192.168.18.44:5055 "POST / HTTP/1.1" 200 2
+2024-06-21 20:37:49 ERROR Erro ao conectar ao Redis: Error 11001 connecting to redis-vl4g68.serverless.use1.cache.amazonaws.com:6379:6379. getaddrinfo failed.
+2024-06-21 20:37:49 INFO Aplicativo inicializado com sucesso.
+2024-06-21 20:37:49 INFO Serving on http://0.0.0.0:5000
+2024-06-21 20:41:24 ERROR Erro ao conectar ao Redis: Timeout connecting to server
+2024-06-21 20:41:24 INFO Aplicativo inicializado com sucesso.
+2024-06-21 20:41:24 INFO Serving on http://0.0.0.0:5000
+2024-06-21 20:46:31 ERROR Erro ao conectar ao Redis: Error 11001 connecting to redis-vl4g68.serverless.use1.cache.amazonaws.com:6379:6379. getaddrinfo failed.
+2024-06-21 20:46:31 INFO Aplicativo inicializado com sucesso.
+2024-06-21 20:46:31 INFO Serving on http://0.0.0.0:5000
+2024-06-21 20:51:32 ERROR Erro ao conectar ao Redis: Timeout connecting to server
+2024-06-21 20:51:32 INFO Aplicativo inicializado com sucesso.
+2024-06-21 20:51:32 INFO Serving on http://0.0.0.0:5000
+2024-06-21 20:56:05 ERROR Erro ao conectar ao Redis: Timeout connecting to server
+2024-06-21 20:56:05 INFO Aplicativo inicializado com sucesso.
+2024-06-21 20:56:05 INFO Serving on http://0.0.0.0:5000
+2024-06-21 21:25:06 ERROR Erro ao conectar ao Redis: Timeout connecting to server
+2024-06-21 21:25:07 INFO Aplicativo inicializado com sucesso.
+2024-06-21 21:25:07 INFO Serving on http://0.0.0.0:5000
+2024-06-21 22:33:33 ERROR Erro ao conectar ao Redis: Timeout connecting to server
+2024-06-21 22:33:33 INFO Aplicativo inicializado com sucesso.
+2024-06-21 22:33:33 INFO Serving on http://0.0.0.0:5000
+2024-06-21 22:44:47 ERROR Erro ao conectar ao Redis: Error 11001 connecting to rrediss-vl4g68.serverless.use1.cache.amazonaws.com:6379. getaddrinfo failed.
+2024-06-21 22:44:47 INFO Aplicativo inicializado com sucesso.
+2024-06-21 22:44:47 INFO Serving on http://0.0.0.0:5000
+2024-06-21 22:45:31 ERROR Erro ao conectar ao Redis: Error 11001 connecting to rrediss-vl4g68.serverless.use1.cache.amazonaws.com:6379. getaddrinfo failed.
+2024-06-21 22:45:32 INFO Aplicativo inicializado com sucesso.
+2024-06-21 22:45:32 INFO Serving on http://0.0.0.0:5000
+2024-06-21 22:46:08 ERROR Erro ao conectar ao Redis: Error 11001 connecting to rrediss-vl4g68.serverless.use1.cache.amazonaws.com:6379. getaddrinfo failed.
+2024-06-21 22:46:08 INFO Aplicativo inicializado com sucesso.
+2024-06-21 22:46:08 INFO Serving on http://0.0.0.0:5000
+2024-06-21 22:46:34 INFO Aplicativo inicializado com sucesso.
+2024-06-21 22:46:34 INFO Serving on http://0.0.0.0:5000
+2024-06-21 22:47:56 ERROR Erro ao conectar ao Redis: Error 11001 connecting to rrediss-vl4g68.serverless.use1.cache.amazonaws.com:6379. getaddrinfo failed.
+2024-06-21 22:47:57 INFO Aplicativo inicializado com sucesso.
+2024-06-21 22:47:57 INFO Serving on http://0.0.0.0:5000
+2024-06-21 22:53:10 ERROR Erro ao conectar ao Redis: Timeout connecting to server
+2024-06-21 22:53:10 INFO Aplicativo inicializado com sucesso.
+2024-06-21 22:53:10 INFO Serving on http://0.0.0.0:5000
+2024-06-21 23:00:42 ERROR Erro ao conectar ao Redis: Timeout connecting to server
+2024-06-21 23:00:43 INFO Aplicativo inicializado com sucesso.
+2024-06-21 23:00:43 INFO Serving on http://0.0.0.0:5000
+2024-06-21 23:18:33 ERROR Erro ao conectar ao Redis: Timeout connecting to server
+2024-06-21 23:18:34 INFO Aplicativo inicializado com sucesso.
+2024-06-21 23:18:34 INFO Serving on http://0.0.0.0:5000
+2024-06-21 23:20:55 ERROR Erro ao conectar ao Redis: Timeout connecting to server
+2024-06-21 23:20:55 INFO Aplicativo inicializado com sucesso.
+2024-06-21 23:20:55 INFO Serving on http://0.0.0.0:5000
+2024-06-21 23:21:38 ERROR Erro ao conectar ao Redis: Error 10061 connecting to ec2-54-89-104-225.compute-1.amazonaws.com:6379. Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente.
+2024-06-21 23:21:38 INFO Aplicativo inicializado com sucesso.
+2024-06-21 23:21:38 INFO Serving on http://0.0.0.0:5000
+2024-06-21 23:22:15 ERROR Erro ao conectar ao Redis: Error 10061 connecting to 54.89.104.225:6379. Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente.
+2024-06-21 23:22:15 INFO Aplicativo inicializado com sucesso.
+2024-06-21 23:22:15 INFO Serving on http://0.0.0.0:5000
+2024-06-21 23:24:51 ERROR Erro ao conectar ao Redis: Timeout connecting to server
+2024-06-21 23:24:51 INFO Aplicativo inicializado com sucesso.
+2024-06-21 23:24:51 INFO Serving on http://0.0.0.0:5000
+2024-06-21 23:25:29 ERROR Erro ao conectar ao Redis: Error 10061 connecting to 54.89.104.225:6379. Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente.
+2024-06-21 23:25:29 INFO Aplicativo inicializado com sucesso.
+2024-06-21 23:25:29 INFO Serving on http://0.0.0.0:5000
+2024-06-21 23:25:51 ERROR Erro ao conectar ao Redis: Error 10061 connecting to 54.89.104.225:6379. Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente.
+2024-06-21 23:25:51 INFO Aplicativo inicializado com sucesso.
+2024-06-21 23:25:51 INFO Serving on http://0.0.0.0:5000
+2024-06-21 23:26:46 ERROR Erro ao conectar ao Redis: Error 10061 connecting to 54.89.104.225:6379. Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente.
+2024-06-21 23:26:46 INFO Aplicativo inicializado com sucesso.
+2024-06-21 23:26:46 INFO Serving on http://0.0.0.0:5000
+2024-06-22 00:36:19 ERROR Erro ao conectar ao Redis: Error 10061 connecting to 3.92.47.175:6379. Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente.
+2024-06-22 00:36:19 INFO Aplicativo inicializado com sucesso.
+2024-06-22 00:36:19 INFO Serving on http://0.0.0.0:5000
+2024-06-22 00:46:10 INFO Aplicativo inicializado com sucesso.
+2024-06-22 00:46:10 INFO Serving on http://0.0.0.0:5000
+2024-06-22 00:47:43 INFO Aplicativo inicializado com sucesso.
+2024-06-22 00:47:43 INFO Serving on http://0.0.0.0:5000
+2024-06-22 00:48:27 WARNING Task queue depth is 1
+2024-06-22 00:48:27 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-22 00:48:27 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-22 00:48:27 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-22 00:48:27 INFO id_usuario <RedisSession {'_user_id': 30, '_fresh': True, '_id': 'ff34d8ebd8913ed7eb0b48b702b9c1f8f00070f9fed994d6ab14ffd2880dc166d0d62acf05fd5e69ca5d1468c854df38b41e1abcf6ee3a25741bb7e403014f90', 'user_id': 30}>
+2024-06-22 00:48:27 INFO Usuário lolo logado com sucesso.
+2024-06-22 00:48:27 WARNING Task queue depth is 1
+2024-06-22 00:48:28 INFO id_usuario <RedisSession {'_user_id': 30, '_fresh': True, '_id': 'ff34d8ebd8913ed7eb0b48b702b9c1f8f00070f9fed994d6ab14ffd2880dc166d0d62acf05fd5e69ca5d1468c854df38b41e1abcf6ee3a25741bb7e403014f90', 'user_id': 30}>
+2024-06-22 00:48:28 INFO Usuário lolo logado com sucesso.
+2024-06-22 00:48:28 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-22 00:48:28 WARNING Task queue depth is 1
+2024-06-22 00:48:28 DEBUG http://192.168.18.44:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 00:48:28 DEBUG http://192.168.18.44:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 00:48:28 DEBUG http://192.168.18.44:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 00:48:28 DEBUG http://192.168.18.44:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 00:48:28 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-22 00:48:28 DEBUG http://192.168.18.44:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 00:48:29 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-22 00:48:29 INFO Rota /api/chamada/aluno acessada.
+2024-06-22 00:48:29 INFO Rota /api/chamada/aluno acessada.
+2024-06-22 00:48:29 WARNING Task queue depth is 1
+2024-06-22 00:48:29 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-22 00:48:29 WARNING Task queue depth is 2
+2024-06-22 00:48:29 INFO Rota /api/aluno/HistoricoPresenca acessada.
+2024-06-22 00:48:29 WARNING Task queue depth is 1
+2024-06-22 00:48:29 WARNING Task queue depth is 2
+2024-06-22 00:48:29 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-22 00:48:29 INFO Rota /api/aluno/HistoricoPresenca acessada.
+2024-06-22 00:48:29 WARNING Task queue depth is 2
+2024-06-22 00:48:29 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-22 00:48:29 WARNING Task queue depth is 2
+2024-06-22 00:48:29 DEBUG http://192.168.18.44:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 00:48:29 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-22 00:48:29 DEBUG http://192.168.18.44:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 00:48:29 DEBUG http://192.168.18.44:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 00:48:29 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-22 00:48:30 DEBUG http://192.168.18.44:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 00:48:30 DEBUG http://192.168.18.44:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 00:48:30 DEBUG http://192.168.18.44:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 00:50:46 ERROR Erro ao conectar ao Redis: Error 11001 connecting to rediss-vl4g68.serverless.use1.cache.amazonaws.com:6379:6379. getaddrinfo failed.
+2024-06-22 00:50:46 INFO Aplicativo inicializado com sucesso.
+2024-06-22 00:50:46 INFO Serving on http://0.0.0.0:5000
+2024-06-22 00:52:51 INFO Aplicativo inicializado com sucesso.
+2024-06-22 00:52:51 INFO Serving on http://0.0.0.0:5000
+2024-06-22 00:54:37 INFO Rota /api/chamada/aluno acessada.
+2024-06-22 00:54:37 WARNING Task queue depth is 1
+2024-06-22 00:54:37 WARNING Task queue depth is 1
+2024-06-22 00:54:37 INFO Rota /api/aluno/HistoricoPresenca acessada.
+2024-06-22 00:54:37 WARNING Task queue depth is 1
+2024-06-22 00:54:37 INFO Rota /api/chamada/aluno acessada.
+2024-06-22 00:54:37 WARNING Task queue depth is 1
+2024-06-22 00:54:37 WARNING Task queue depth is 2
+2024-06-22 00:54:37 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-22 00:54:37 INFO Rota /api/aluno/HistoricoPresenca acessada.
+2024-06-22 00:54:37 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-22 00:54:37 WARNING Task queue depth is 1
+2024-06-22 00:54:37 WARNING Task queue depth is 2
+2024-06-22 00:54:37 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-22 00:54:37 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-22 00:54:37 WARNING Task queue depth is 1
+2024-06-22 00:54:37 WARNING Task queue depth is 2
+2024-06-22 00:54:37 DEBUG http://192.168.18.44:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 00:54:37 DEBUG http://192.168.18.44:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 00:54:37 DEBUG http://192.168.18.44:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 00:54:37 DEBUG http://192.168.18.44:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 00:54:37 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-22 00:54:37 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-22 00:54:37 DEBUG http://192.168.18.44:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 00:54:37 DEBUG http://192.168.18.44:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:23:19 WARNING Task queue depth is 1
+2024-06-22 18:23:19 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-22 18:23:19 WARNING Task queue depth is 1
+2024-06-22 18:23:19 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-22 18:23:19 WARNING Task queue depth is 1
+2024-06-22 18:23:20 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-22 18:23:20 WARNING Task queue depth is 2
+2024-06-22 18:23:20 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-22 18:23:41 WARNING Task queue depth is 2
+2024-06-22 18:23:41 WARNING Task queue depth is 1
+2024-06-22 18:23:41 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-22 18:23:41 WARNING Task queue depth is 1
+2024-06-22 18:23:41 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-22 18:23:41 WARNING Task queue depth is 1
+2024-06-22 18:23:41 WARNING Task queue depth is 1
+2024-06-22 18:23:41 WARNING Task queue depth is 2
+2024-06-22 18:23:41 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-22 18:23:41 WARNING Task queue depth is 2
+2024-06-22 18:23:41 WARNING Task queue depth is 2
+2024-06-22 18:23:41 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-22 18:24:02 WARNING Task queue depth is 2
+2024-06-22 18:24:02 WARNING Task queue depth is 2
+2024-06-22 18:24:02 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-22 18:24:02 WARNING Task queue depth is 2
+2024-06-22 18:24:02 WARNING Task queue depth is 1
+2024-06-22 18:24:02 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-22 18:24:02 WARNING Task queue depth is 1
+2024-06-22 18:24:02 WARNING Task queue depth is 1
+2024-06-22 18:24:02 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-22 18:24:02 WARNING Task queue depth is 1
+2024-06-22 18:24:02 WARNING Task queue depth is 2
+2024-06-22 18:24:02 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-22 18:24:19 WARNING Task queue depth is 3
+2024-06-22 18:24:19 WARNING Task queue depth is 4
+2024-06-22 18:24:19 WARNING Task queue depth is 5
+2024-06-22 18:24:19 WARNING Task queue depth is 6
+2024-06-22 18:24:19 WARNING Task queue depth is 7
+2024-06-22 18:24:19 WARNING Task queue depth is 8
+2024-06-22 18:24:23 WARNING Task queue depth is 5
+2024-06-22 18:24:23 WARNING Task queue depth is 5
+2024-06-22 18:24:23 WARNING Task queue depth is 5
+2024-06-22 18:24:23 WARNING Task queue depth is 5
+2024-06-22 18:24:23 WARNING Task queue depth is 5
+2024-06-22 18:24:23 WARNING Task queue depth is 5
+2024-06-22 18:24:23 WARNING Task queue depth is 5
+2024-06-22 18:24:23 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-22 18:24:23 WARNING Task queue depth is 4
+2024-06-22 18:24:23 WARNING Task queue depth is 4
+2024-06-22 18:24:23 WARNING Task queue depth is 4
+2024-06-22 18:24:23 WARNING Task queue depth is 4
+2024-06-22 18:24:23 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-22 18:24:23 WARNING Task queue depth is 2
+2024-06-22 18:24:23 WARNING Task queue depth is 2
+2024-06-22 18:24:23 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-22 18:24:23 WARNING Task queue depth is 2
+2024-06-22 18:24:23 WARNING Task queue depth is 2
+2024-06-22 18:24:23 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-22 18:24:44 WARNING Task queue depth is 2
+2024-06-22 18:24:44 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-22 18:24:44 WARNING Task queue depth is 2
+2024-06-22 18:24:44 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-22 18:24:44 WARNING Task queue depth is 2
+2024-06-22 18:24:44 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-22 18:24:44 WARNING Task queue depth is 2
+2024-06-22 18:24:44 DEBUG Starting new HTTP connection (1): 192.168.18.44:5055
+2024-06-22 18:25:17 ERROR Erro ao conectar ao Redis: Timeout connecting to server
+2024-06-22 18:25:17 INFO Aplicativo inicializado com sucesso.
+2024-06-22 18:25:17 INFO Serving on http://0.0.0.0:5000
+2024-06-22 18:25:17 WARNING Task queue depth is 1
+2024-06-22 18:25:17 WARNING Task queue depth is 1
+2024-06-22 18:25:17 WARNING Task queue depth is 1
+2024-06-22 18:25:17 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:25:17 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:25:17 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:25:17 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:25:17 WARNING Task queue depth is 2
+2024-06-22 18:25:18 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:25:18 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:25:18 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:25:18 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:25:18 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:25:18 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:25:18 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:25:18 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:26:41 INFO Aplicativo inicializado com sucesso.
+2024-06-22 18:26:41 INFO Serving on http://0.0.0.0:5000
+2024-06-22 18:32:51 WARNING Task queue depth is 1
+2024-06-22 18:32:51 WARNING Task queue depth is 1
+2024-06-22 18:32:51 WARNING Task queue depth is 2
+2024-06-22 18:32:51 WARNING Task queue depth is 2
+2024-06-22 18:32:51 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:32:51 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:32:51 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:32:51 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:32:51 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:32:51 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:32:51 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:32:51 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:32:51 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:32:51 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:32:52 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:32:52 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:32:53 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:32:53 WARNING Task queue depth is 1
+2024-06-22 18:32:53 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:32:53 WARNING Task queue depth is 1
+2024-06-22 18:32:53 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:32:53 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:32:53 WARNING Task queue depth is 2
+2024-06-22 18:32:53 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:32:53 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:32:53 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:32:53 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:32:53 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:32:53 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:32:53 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:32:53 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:41:04 WARNING Task queue depth is 1
+2024-06-22 18:41:04 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:41:04 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:41:04 WARNING Task queue depth is 1
+2024-06-22 18:41:04 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:41:04 WARNING Task queue depth is 1
+2024-06-22 18:41:04 WARNING Task queue depth is 1
+2024-06-22 18:41:04 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:41:04 WARNING Task queue depth is 2
+2024-06-22 18:41:04 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:41:04 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:41:04 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:41:04 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:41:04 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:41:04 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:41:04 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:41:04 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:41:41 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:41:41 WARNING Task queue depth is 1
+2024-06-22 18:41:41 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:41:41 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:41:41 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:41:41 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:41:41 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:41:42 INFO id_usuario <RedisSession {'_user_id': 30, '_fresh': True, '_id': 'ff34d8ebd8913ed7eb0b48b702b9c1f8f00070f9fed994d6ab14ffd2880dc166d0d62acf05fd5e69ca5d1468c854df38b41e1abcf6ee3a25741bb7e403014f90', 'user_id': 30}>
+2024-06-22 18:41:42 INFO id_usuario <RedisSession {'_user_id': 30, '_fresh': True, '_id': 'ff34d8ebd8913ed7eb0b48b702b9c1f8f00070f9fed994d6ab14ffd2880dc166d0d62acf05fd5e69ca5d1468c854df38b41e1abcf6ee3a25741bb7e403014f90', 'user_id': 30}>
+2024-06-22 18:41:42 INFO Usuário lolo logado com sucesso.
+2024-06-22 18:41:42 INFO Usuário lolo logado com sucesso.
+2024-06-22 18:41:43 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:41:43 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:41:43 WARNING Task queue depth is 1
+2024-06-22 18:41:43 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:41:43 WARNING Task queue depth is 2
+2024-06-22 18:41:43 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:41:43 WARNING Task queue depth is 2
+2024-06-22 18:41:43 WARNING Task queue depth is 2
+2024-06-22 18:41:43 WARNING Task queue depth is 2
+2024-06-22 18:41:43 WARNING Task queue depth is 2
+2024-06-22 18:41:43 INFO Rota /api/chamada/aluno acessada.
+2024-06-22 18:41:43 WARNING Task queue depth is 2
+2024-06-22 18:41:43 INFO Rota /api/aluno/HistoricoPresenca acessada.
+2024-06-22 18:41:43 WARNING Task queue depth is 2
+2024-06-22 18:41:43 INFO Rota /api/chamada/aluno acessada.
+2024-06-22 18:41:43 WARNING Task queue depth is 2
+2024-06-22 18:41:43 INFO Rota /api/aluno/HistoricoPresenca acessada.
+2024-06-22 18:41:43 WARNING Task queue depth is 2
+2024-06-22 18:41:43 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:41:43 WARNING Task queue depth is 2
+2024-06-22 18:41:44 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:41:44 WARNING Task queue depth is 2
+2024-06-22 18:41:44 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:41:44 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:41:44 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:41:44 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:41:44 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:41:44 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:41:44 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:41:44 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:41:46 INFO Rota /api/aluno/HistoricoPresenca acessada.
+2024-06-22 18:41:46 WARNING Task queue depth is 1
+2024-06-22 18:41:46 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:41:46 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:41:46 WARNING Task queue depth is 2
+2024-06-22 18:41:46 INFO Rota /api/aluno/HistoricoPresenca acessada.
+2024-06-22 18:41:46 WARNING Task queue depth is 2
+2024-06-22 18:41:46 WARNING Task queue depth is 1
+2024-06-22 18:41:46 INFO Rota /api/aluno/PresencaFalta acessada.
+2024-06-22 18:41:46 WARNING Task queue depth is 1
+2024-06-22 18:41:46 WARNING Task queue depth is 2
+2024-06-22 18:41:46 INFO Rota /api/aluno/PresencaFalta acessada.
+2024-06-22 18:41:46 WARNING Task queue depth is 2
+2024-06-22 18:41:46 WARNING Task queue depth is 2
+2024-06-22 18:41:46 WARNING Task queue depth is 2
+2024-06-22 18:41:46 WARNING Task queue depth is 1
+2024-06-22 18:41:46 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:41:46 WARNING Task queue depth is 2
+2024-06-22 18:41:46 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:41:46 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:41:46 WARNING Task queue depth is 2
+2024-06-22 18:41:46 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:41:46 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:41:46 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:41:46 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:41:47 WARNING Task queue depth is 1
+2024-06-22 18:41:47 WARNING Task queue depth is 2
+2024-06-22 18:41:47 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:41:47 WARNING Task queue depth is 2
+2024-06-22 18:41:47 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:41:47 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:41:47 INFO Rota /api/chamada/aluno acessada.
+2024-06-22 18:41:47 WARNING Task queue depth is 2
+2024-06-22 18:41:47 INFO Rota /api/aluno/HistoricoPresenca acessada.
+2024-06-22 18:41:47 WARNING Task queue depth is 2
+2024-06-22 18:41:47 WARNING Task queue depth is 2
+2024-06-22 18:41:47 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:41:47 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:41:47 INFO Rota /api/chamada/aluno acessada.
+2024-06-22 18:41:47 WARNING Task queue depth is 2
+2024-06-22 18:41:47 INFO Rota /api/aluno/HistoricoPresenca acessada.
+2024-06-22 18:41:47 WARNING Task queue depth is 2
+2024-06-22 18:41:47 WARNING Task queue depth is 2
+2024-06-22 18:41:47 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:41:47 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:41:47 WARNING Task queue depth is 2
+2024-06-22 18:41:47 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:41:47 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:41:47 WARNING Task queue depth is 2
+2024-06-22 18:41:47 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:41:47 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:41:47 WARNING Task queue depth is 2
+2024-06-22 18:41:47 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:41:47 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:41:47 WARNING Task queue depth is 2
+2024-06-22 18:41:47 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:41:47 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:41:47 INFO Rota /api/aluno/PresencaFalta acessada.
+2024-06-22 18:41:47 WARNING Task queue depth is 2
+2024-06-22 18:41:47 INFO Rota /api/aluno/HistoricoPresenca acessada.
+2024-06-22 18:41:47 WARNING Task queue depth is 2
+2024-06-22 18:41:47 WARNING Task queue depth is 2
+2024-06-22 18:41:47 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:41:47 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:41:47 INFO Rota /api/aluno/PresencaFalta acessada.
+2024-06-22 18:41:47 WARNING Task queue depth is 2
+2024-06-22 18:41:47 INFO Rota /api/aluno/HistoricoPresenca acessada.
+2024-06-22 18:41:47 WARNING Task queue depth is 2
+2024-06-22 18:41:47 WARNING Task queue depth is 2
+2024-06-22 18:41:47 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:41:48 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:41:48 WARNING Task queue depth is 2
+2024-06-22 18:41:48 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:41:48 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:41:48 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:41:48 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:41:48 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:41:48 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:41:48 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:41:48 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:42:04 ERROR Exception on /api/login [POST]
+Traceback (most recent call last):
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\_parsers\socket.py", line 65, in _read_from_socket
+    data = self._sock.recv(socket_read_size)
+TimeoutError: [WinError 10060] Uma tentativa de conexão falhou porque o componente conectado não respondeu
+corretamente após um período de tempo ou a conexão estabelecida falhou
+porque o host conectado não respondeu
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 2529, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 1826, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 1847, in finalize_request
+    response = self.process_response(response)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 2344, in process_response
+    self.session_interface.save_session(self, ctx.session, response)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask_session\base.py", line 305, in save_session
+    self._upsert_session(app.permanent_session_lifetime, session, store_id)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask_session\redis\redis.py", line 81, in _upsert_session
+    self.client.set(
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\commands\core.py", line 2342, in set
+    return self.execute_command("SET", *pieces, **options)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\client.py", line 545, in execute_command
+    return conn.retry.call_with_retry(
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\retry.py", line 49, in call_with_retry
+    fail(error)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\client.py", line 549, in <lambda>
+    lambda error: self._disconnect_raise(conn, error),
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\client.py", line 535, in _disconnect_raise
+    raise error
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\retry.py", line 46, in call_with_retry
+    return do()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\client.py", line 546, in <lambda>
+    lambda: self._send_command_parse_response(
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\client.py", line 522, in _send_command_parse_response
+    return self.parse_response(conn, command_name, **options)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\client.py", line 562, in parse_response
+    response = connection.read_response()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 512, in read_response
+    response = self._parser.read_response(disable_decoding=disable_decoding)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\_parsers\resp2.py", line 15, in read_response
+    result = self._read_response(disable_decoding=disable_decoding)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\_parsers\resp2.py", line 25, in _read_response
+    raw = self._buffer.readline()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\_parsers\socket.py", line 115, in readline
+    self._read_from_socket()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\_parsers\socket.py", line 78, in _read_from_socket
+    raise TimeoutError("Timeout reading from socket")
+redis.exceptions.TimeoutError: Timeout reading from socket
+2024-06-22 18:42:05 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:42:05 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:55:00 INFO Usuário deslogado com sucesso.
+2024-06-22 18:55:04 WARNING Task queue depth is 1
+2024-06-22 18:55:04 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:55:04 INFO Rota /api/aluno/PresencaFalta acessada.
+2024-06-22 18:55:04 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:55:04 INFO Rota /api/aluno/HistoricoPresenca acessada.
+2024-06-22 18:55:04 WARNING Task queue depth is 1
+2024-06-22 18:55:04 WARNING Task queue depth is 2
+2024-06-22 18:55:04 INFO Rota /api/aluno/PresencaFalta acessada.
+2024-06-22 18:55:04 WARNING Task queue depth is 2
+2024-06-22 18:55:04 WARNING Task queue depth is 3
+2024-06-22 18:55:04 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:55:04 WARNING Task queue depth is 3
+2024-06-22 18:55:05 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:55:05 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:55:05 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:55:05 INFO Rota /api/aluno/HistoricoPresenca acessada.
+2024-06-22 18:55:05 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:55:05 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:55:05 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:55:05 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:55:05 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:55:05 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:55:05 INFO Usuário deslogado com sucesso.
+2024-06-22 18:55:20 ERROR Exception on /api/logout [POST]
+Traceback (most recent call last):
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\_parsers\socket.py", line 65, in _read_from_socket
+    data = self._sock.recv(socket_read_size)
+TimeoutError: [WinError 10060] Uma tentativa de conexão falhou porque o componente conectado não respondeu
+corretamente após um período de tempo ou a conexão estabelecida falhou
+porque o host conectado não respondeu
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 2529, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 1826, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 1847, in finalize_request
+    response = self.process_response(response)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 2344, in process_response
+    self.session_interface.save_session(self, ctx.session, response)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask_session\base.py", line 296, in save_session
+    self._delete_session(store_id)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask_session\redis\redis.py", line 70, in _delete_session
+    self.client.delete(store_id)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\commands\core.py", line 1713, in delete
+    return self.execute_command("DEL", *names)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\client.py", line 545, in execute_command
+    return conn.retry.call_with_retry(
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\retry.py", line 49, in call_with_retry
+    fail(error)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\client.py", line 549, in <lambda>
+    lambda error: self._disconnect_raise(conn, error),
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\client.py", line 535, in _disconnect_raise
+    raise error
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\retry.py", line 46, in call_with_retry
+    return do()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\client.py", line 546, in <lambda>
+    lambda: self._send_command_parse_response(
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\client.py", line 522, in _send_command_parse_response
+    return self.parse_response(conn, command_name, **options)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\client.py", line 562, in parse_response
+    response = connection.read_response()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 512, in read_response
+    response = self._parser.read_response(disable_decoding=disable_decoding)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\_parsers\resp2.py", line 15, in read_response
+    result = self._read_response(disable_decoding=disable_decoding)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\_parsers\resp2.py", line 25, in _read_response
+    raw = self._buffer.readline()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\_parsers\socket.py", line 115, in readline
+    self._read_from_socket()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\_parsers\socket.py", line 78, in _read_from_socket
+    raise TimeoutError("Timeout reading from socket")
+redis.exceptions.TimeoutError: Timeout reading from socket
+2024-06-22 18:55:24 ERROR Exception on /api/logout [POST]
+Traceback (most recent call last):
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\_parsers\socket.py", line 65, in _read_from_socket
+    data = self._sock.recv(socket_read_size)
+TimeoutError: [WinError 10060] Uma tentativa de conexão falhou porque o componente conectado não respondeu
+corretamente após um período de tempo ou a conexão estabelecida falhou
+porque o host conectado não respondeu
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 2529, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 1826, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 1847, in finalize_request
+    response = self.process_response(response)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 2344, in process_response
+    self.session_interface.save_session(self, ctx.session, response)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask_session\base.py", line 296, in save_session
+    self._delete_session(store_id)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask_session\redis\redis.py", line 70, in _delete_session
+    self.client.delete(store_id)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\commands\core.py", line 1713, in delete
+    return self.execute_command("DEL", *names)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\client.py", line 545, in execute_command
+    return conn.retry.call_with_retry(
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\retry.py", line 49, in call_with_retry
+    fail(error)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\client.py", line 549, in <lambda>
+    lambda error: self._disconnect_raise(conn, error),
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\client.py", line 535, in _disconnect_raise
+    raise error
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\retry.py", line 46, in call_with_retry
+    return do()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\client.py", line 546, in <lambda>
+    lambda: self._send_command_parse_response(
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\client.py", line 522, in _send_command_parse_response
+    return self.parse_response(conn, command_name, **options)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\client.py", line 562, in parse_response
+    response = connection.read_response()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 512, in read_response
+    response = self._parser.read_response(disable_decoding=disable_decoding)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\_parsers\resp2.py", line 15, in read_response
+    result = self._read_response(disable_decoding=disable_decoding)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\_parsers\resp2.py", line 25, in _read_response
+    raw = self._buffer.readline()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\_parsers\socket.py", line 115, in readline
+    self._read_from_socket()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\_parsers\socket.py", line 78, in _read_from_socket
+    raise TimeoutError("Timeout reading from socket")
+redis.exceptions.TimeoutError: Timeout reading from socket
+2024-06-22 18:55:25 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:55:25 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:55:25 WARNING Task queue depth is 1
+2024-06-22 18:55:25 WARNING Task queue depth is 1
+2024-06-22 18:55:25 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:55:25 INFO id_usuario <RedisSession {'_user_id': 30, '_fresh': True, '_id': 'ff34d8ebd8913ed7eb0b48b702b9c1f8f00070f9fed994d6ab14ffd2880dc166d0d62acf05fd5e69ca5d1468c854df38b41e1abcf6ee3a25741bb7e403014f90', 'user_id': 30}>
+2024-06-22 18:55:25 INFO Usuário lolo logado com sucesso.
+2024-06-22 18:55:26 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:55:26 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:55:26 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:55:26 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:55:26 INFO id_usuario <RedisSession {'_user_id': 30, '_fresh': True, '_id': 'ff34d8ebd8913ed7eb0b48b702b9c1f8f00070f9fed994d6ab14ffd2880dc166d0d62acf05fd5e69ca5d1468c854df38b41e1abcf6ee3a25741bb7e403014f90', 'user_id': 30}>
+2024-06-22 18:55:26 INFO Usuário lolo logado com sucesso.
+2024-06-22 18:55:26 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:55:26 WARNING Task queue depth is 1
+2024-06-22 18:55:26 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:55:26 WARNING Task queue depth is 2
+2024-06-22 18:55:26 WARNING Task queue depth is 2
+2024-06-22 18:55:26 WARNING Task queue depth is 2
+2024-06-22 18:55:26 WARNING Task queue depth is 2
+2024-06-22 18:55:26 WARNING Task queue depth is 2
+2024-06-22 18:55:26 INFO Rota /api/chamada/aluno acessada.
+2024-06-22 18:55:26 WARNING Task queue depth is 2
+2024-06-22 18:55:26 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:55:26 WARNING Task queue depth is 2
+2024-06-22 18:55:26 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:55:26 INFO Rota /api/aluno/HistoricoPresenca acessada.
+2024-06-22 18:55:26 WARNING Task queue depth is 2
+2024-06-22 18:55:26 INFO Rota /api/chamada/aluno acessada.
+2024-06-22 18:55:26 WARNING Task queue depth is 2
+2024-06-22 18:55:26 INFO Rota /api/aluno/HistoricoPresenca acessada.
+2024-06-22 18:55:26 WARNING Task queue depth is 2
+2024-06-22 18:55:26 WARNING Task queue depth is 2
+2024-06-22 18:55:26 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:55:26 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:55:26 INFO Rota /api/chamada/aluno acessada.
+2024-06-22 18:55:26 WARNING Task queue depth is 2
+2024-06-22 18:55:26 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:55:26 INFO Rota /api/aluno/HistoricoPresenca acessada.
+2024-06-22 18:55:26 WARNING Task queue depth is 2
+2024-06-22 18:55:26 WARNING Task queue depth is 2
+2024-06-22 18:55:26 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:55:26 WARNING Task queue depth is 2
+2024-06-22 18:55:26 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:55:26 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:55:26 WARNING Task queue depth is 2
+2024-06-22 18:55:26 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:55:26 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:55:26 WARNING Task queue depth is 2
+2024-06-22 18:55:26 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:55:27 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:55:27 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:55:27 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:55:27 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:55:27 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:55:27 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:55:27 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:55:27 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:58:38 INFO Aplicativo inicializado com sucesso.
+2024-06-22 18:58:38 INFO Serving on http://0.0.0.0:5000
+2024-06-22 18:59:19 INFO Usuário deslogado com sucesso.
+2024-06-22 18:59:30 WARNING Task queue depth is 1
+2024-06-22 18:59:30 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:59:30 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:59:31 INFO id_usuario <RedisSession {'_user_id': 30, '_fresh': True, '_id': 'ff34d8ebd8913ed7eb0b48b702b9c1f8f00070f9fed994d6ab14ffd2880dc166d0d62acf05fd5e69ca5d1468c854df38b41e1abcf6ee3a25741bb7e403014f90', 'user_id': 30}>
+2024-06-22 18:59:31 INFO Usuário lolo logado com sucesso.
+2024-06-22 18:59:31 INFO id_usuario <RedisSession {'_user_id': 30, '_fresh': True, '_id': 'ff34d8ebd8913ed7eb0b48b702b9c1f8f00070f9fed994d6ab14ffd2880dc166d0d62acf05fd5e69ca5d1468c854df38b41e1abcf6ee3a25741bb7e403014f90', 'user_id': 30}>
+2024-06-22 18:59:31 INFO Usuário lolo logado com sucesso.
+2024-06-22 18:59:31 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:59:31 WARNING Task queue depth is 1
+2024-06-22 18:59:31 WARNING Task queue depth is 2
+2024-06-22 18:59:31 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:59:31 WARNING Task queue depth is 2
+2024-06-22 18:59:31 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:59:31 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:59:31 WARNING Task queue depth is 2
+2024-06-22 18:59:31 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:59:31 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:59:31 WARNING Task queue depth is 2
+2024-06-22 18:59:31 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:59:31 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:59:31 WARNING Task queue depth is 2
+2024-06-22 18:59:31 WARNING Task queue depth is 2
+2024-06-22 18:59:31 WARNING Task queue depth is 2
+2024-06-22 18:59:31 WARNING Task queue depth is 2
+2024-06-22 18:59:31 INFO Rota /api/chamada/aluno acessada.
+2024-06-22 18:59:31 WARNING Task queue depth is 2
+2024-06-22 18:59:31 INFO Rota /api/aluno/HistoricoPresenca acessada.
+2024-06-22 18:59:31 WARNING Task queue depth is 2
+2024-06-22 18:59:31 INFO Rota /api/chamada/aluno acessada.
+2024-06-22 18:59:31 WARNING Task queue depth is 2
+2024-06-22 18:59:31 INFO Rota /api/aluno/HistoricoPresenca acessada.
+2024-06-22 18:59:31 WARNING Task queue depth is 2
+2024-06-22 18:59:31 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:59:31 WARNING Task queue depth is 2
+2024-06-22 18:59:31 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:59:31 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:59:31 WARNING Task queue depth is 2
+2024-06-22 18:59:31 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:59:31 WARNING Task queue depth is 2
+2024-06-22 18:59:31 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:59:31 WARNING Task queue depth is 2
+2024-06-22 18:59:31 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:59:32 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:59:32 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:59:32 WARNING Task queue depth is 2
+2024-06-22 18:59:32 WARNING Task queue depth is 2
+2024-06-22 18:59:32 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:59:32 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:59:32 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:59:32 INFO Rota /api/chamada/aluno acessada.
+2024-06-22 18:59:32 INFO Rota /api/aluno/HistoricoPresenca acessada.
+2024-06-22 18:59:32 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:59:32 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:59:32 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 18:59:32 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:59:32 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:59:32 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 18:59:32 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 19:13:06 INFO Usuário deslogado com sucesso.
+2024-06-22 19:13:08 INFO Usuário deslogado com sucesso.
+2024-06-22 19:13:25 ERROR Exception on /api/logout [POST]
+Traceback (most recent call last):
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\_parsers\socket.py", line 65, in _read_from_socket
+    data = self._sock.recv(socket_read_size)
+TimeoutError: [WinError 10060] Uma tentativa de conexão falhou porque o componente conectado não respondeu
+corretamente após um período de tempo ou a conexão estabelecida falhou
+porque o host conectado não respondeu
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 2529, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 1826, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 1847, in finalize_request
+    response = self.process_response(response)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 2344, in process_response
+    self.session_interface.save_session(self, ctx.session, response)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask_session\base.py", line 296, in save_session
+    self._delete_session(store_id)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask_session\redis\redis.py", line 70, in _delete_session
+    self.client.delete(store_id)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\commands\core.py", line 1713, in delete
+    return self.execute_command("DEL", *names)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\client.py", line 545, in execute_command
+    return conn.retry.call_with_retry(
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\retry.py", line 49, in call_with_retry
+    fail(error)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\client.py", line 549, in <lambda>
+    lambda error: self._disconnect_raise(conn, error),
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\client.py", line 535, in _disconnect_raise
+    raise error
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\retry.py", line 46, in call_with_retry
+    return do()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\client.py", line 546, in <lambda>
+    lambda: self._send_command_parse_response(
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\client.py", line 522, in _send_command_parse_response
+    return self.parse_response(conn, command_name, **options)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\client.py", line 562, in parse_response
+    response = connection.read_response()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 512, in read_response
+    response = self._parser.read_response(disable_decoding=disable_decoding)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\_parsers\resp2.py", line 15, in read_response
+    result = self._read_response(disable_decoding=disable_decoding)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\_parsers\resp2.py", line 25, in _read_response
+    raw = self._buffer.readline()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\_parsers\socket.py", line 115, in readline
+    self._read_from_socket()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\_parsers\socket.py", line 78, in _read_from_socket
+    raise TimeoutError("Timeout reading from socket")
+redis.exceptions.TimeoutError: Timeout reading from socket
+2024-06-22 19:13:27 ERROR Exception on /api/logout [POST]
+Traceback (most recent call last):
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\_parsers\socket.py", line 65, in _read_from_socket
+    data = self._sock.recv(socket_read_size)
+TimeoutError: [WinError 10060] Uma tentativa de conexão falhou porque o componente conectado não respondeu
+corretamente após um período de tempo ou a conexão estabelecida falhou
+porque o host conectado não respondeu
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 2529, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 1826, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 1847, in finalize_request
+    response = self.process_response(response)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask\app.py", line 2344, in process_response
+    self.session_interface.save_session(self, ctx.session, response)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask_session\base.py", line 296, in save_session
+    self._delete_session(store_id)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\flask_session\redis\redis.py", line 70, in _delete_session
+    self.client.delete(store_id)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\commands\core.py", line 1713, in delete
+    return self.execute_command("DEL", *names)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\client.py", line 545, in execute_command
+    return conn.retry.call_with_retry(
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\retry.py", line 49, in call_with_retry
+    fail(error)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\client.py", line 549, in <lambda>
+    lambda error: self._disconnect_raise(conn, error),
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\client.py", line 535, in _disconnect_raise
+    raise error
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\retry.py", line 46, in call_with_retry
+    return do()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\client.py", line 546, in <lambda>
+    lambda: self._send_command_parse_response(
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\client.py", line 522, in _send_command_parse_response
+    return self.parse_response(conn, command_name, **options)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\client.py", line 562, in parse_response
+    response = connection.read_response()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\connection.py", line 512, in read_response
+    response = self._parser.read_response(disable_decoding=disable_decoding)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\_parsers\resp2.py", line 15, in read_response
+    result = self._read_response(disable_decoding=disable_decoding)
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\_parsers\resp2.py", line 25, in _read_response
+    raw = self._buffer.readline()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\_parsers\socket.py", line 115, in readline
+    self._read_from_socket()
+  File "D:\Meridia\presente-backend\backend\venv\lib\site-packages\redis\_parsers\socket.py", line 78, in _read_from_socket
+    raise TimeoutError("Timeout reading from socket")
+redis.exceptions.TimeoutError: Timeout reading from socket
+2024-06-22 19:13:28 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 19:13:28 WARNING Task queue depth is 1
+2024-06-22 19:13:28 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 19:13:29 INFO id_usuario <RedisSession {'_user_id': 30, '_fresh': True, '_id': 'ff34d8ebd8913ed7eb0b48b702b9c1f8f00070f9fed994d6ab14ffd2880dc166d0d62acf05fd5e69ca5d1468c854df38b41e1abcf6ee3a25741bb7e403014f90', 'user_id': 30}>
+2024-06-22 19:13:29 INFO Usuário lolo logado com sucesso.
+2024-06-22 19:13:29 INFO id_usuario <RedisSession {'_user_id': 30, '_fresh': True, '_id': 'ff34d8ebd8913ed7eb0b48b702b9c1f8f00070f9fed994d6ab14ffd2880dc166d0d62acf05fd5e69ca5d1468c854df38b41e1abcf6ee3a25741bb7e403014f90', 'user_id': 30}>
+2024-06-22 19:13:29 INFO Usuário lolo logado com sucesso.
+2024-06-22 19:13:29 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 19:13:29 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 19:13:29 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 19:13:29 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 19:13:29 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 19:13:29 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 19:13:29 WARNING Task queue depth is 1
+2024-06-22 19:13:29 WARNING Task queue depth is 2
+2024-06-22 19:13:29 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 19:13:29 WARNING Task queue depth is 2
+2024-06-22 19:13:29 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 19:13:29 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 19:13:29 WARNING Task queue depth is 2
+2024-06-22 19:13:29 WARNING Task queue depth is 2
+2024-06-22 19:13:29 WARNING Task queue depth is 2
+2024-06-22 19:13:29 WARNING Task queue depth is 2
+2024-06-22 19:13:29 INFO Rota /api/chamada/aluno acessada.
+2024-06-22 19:13:29 WARNING Task queue depth is 2
+2024-06-22 19:13:29 INFO Rota /api/chamada/aluno acessada.
+2024-06-22 19:13:29 WARNING Task queue depth is 2
+2024-06-22 19:13:29 INFO Rota /api/aluno/HistoricoPresenca acessada.
+2024-06-22 19:13:29 WARNING Task queue depth is 2
+2024-06-22 19:13:29 INFO Rota /api/aluno/HistoricoPresenca acessada.
+2024-06-22 19:13:29 WARNING Task queue depth is 2
+2024-06-22 19:13:29 WARNING Task queue depth is 2
+2024-06-22 19:13:29 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 19:13:29 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 19:13:29 WARNING Task queue depth is 2
+2024-06-22 19:13:29 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 19:13:29 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 19:13:29 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 19:13:29 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 19:13:29 DEBUG Starting new HTTP connection (1): 54.173.165.136:5055
+2024-06-22 19:13:29 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 19:13:29 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 19:13:29 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2
+2024-06-22 19:13:30 DEBUG http://54.173.165.136:5055 "POST / HTTP/1.1" 200 2

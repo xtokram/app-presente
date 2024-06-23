@@ -5,14 +5,14 @@ from repository.PainelRepository import PainelRepository
 from dtos.PainelDTO import PainelDTO
 from service.PainelService import PainelService
 
-from flask_jwt_extended import jwt_required, get_jwt_identify
+from flask_jwt_extended import jwt_required, get_jwt_identity
 
 paineis = Blueprint("painel", __name__)
 
 @paineis.route("/api/painel", methods=['GET', 'POST', 'PUT', 'DELETE'])
 @jwt_required()
 def painel():
-    usuario_atual = get_jwt_identify().get('nome')
+    usuario_atual = get_jwt_identity()
     logging.info(f'Rota /api/painel acessada pelo usuario {usuario_atual}.')
     if request.method == 'GET':
         id_painel = request.args.get('id')

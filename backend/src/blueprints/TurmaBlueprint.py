@@ -4,14 +4,14 @@ from repository.TurmaRepository import TurmaRepository
 
 from service.TurmaService import TurmaService
 
-from flask_jwt_extended import jwt_required, get_jwt_identify
+from flask_jwt_extended import jwt_required, get_jwt_identity
 
 turmas = Blueprint("turmas", __name__)
 
 @turmas.route("/api/turma", methods=['GET', 'POST', 'PUT', 'DELETE'])
 @jwt_required()
 def turma():
-    usuario_atual = get_jwt_identify().get('nome')
+    usuario_atual = get_jwt_identity()
     logging.info(f'Rota /api/turma acessada pelo usuario {usuario_atual}.')
     if request.method == 'GET':
         id_turma = request.args.get('id')
@@ -82,7 +82,7 @@ def listar_all_turmas():
 @turmas.route("/api/turma/cadastrarAluno", methods=['POST'])
 @jwt_required()
 def cadastrar_aluno():
-    usuario_atual = get_jwt_identify().nome
+    usuario_atual = get_jwt_identity().nome
     logging.info('Rota /api/turma/cadastrarAluno acessada.')
     data = request.json
 

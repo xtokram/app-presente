@@ -3,7 +3,7 @@ import logging
 
 from repository.PresencaRepository import PresencaRepository
 
-from flask_jwt_extended import jwt_required, get_jwt_identify
+from flask_jwt_extended import jwt_required, get_jwt_identity
 from service.PresencaService import PresencaService
 
 presencas = Blueprint("presencas", __name__)
@@ -11,7 +11,7 @@ presencas = Blueprint("presencas", __name__)
 @presencas.route("/api/presenca", methods=['GET', 'POST', 'PUT', 'DELETE'])
 @jwt_required()
 def presencas_main():
-    usuario_atual = get_jwt_identify().get('nome')
+    usuario_atual = get_jwt_identity()
     logging.info(f'Rota /api/presenca acessada pelo usuario {usuario_atual}.')
     if request.method == 'GET':
         id_presenca = request.args.get('id')
@@ -69,7 +69,7 @@ def presencas_main():
 @presencas.route("/api/presenca/ra", methods=['POST'])
 @jwt_required()
 def marcar_presenca_pelo_ra():
-    usuario_atual = get_jwt_identify().get('nome')
+    usuario_atual = get_jwt_identity()
 
     logging.info(f'Rota /api/presenca/ra acessada pelo usuario {usuario_atual}.')
     data = request.json

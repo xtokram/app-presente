@@ -2,7 +2,7 @@ from flask import Blueprint, request, jsonify
 import logging
 from repository.SecretariaRepository import SecretariaRepository
 
-from flask_jwt_extended import jwt_required, get_jwt_identify
+from flask_jwt_extended import jwt_required, get_jwt_identity
 from service.SecretariaService import SecretariaService
 
 secretaria = Blueprint("secretaria", __name__)
@@ -10,7 +10,7 @@ secretaria = Blueprint("secretaria", __name__)
 @secretaria.route("/api/secretaria", methods=['GET', 'POST', 'PUT', 'DELETE'])
 # @jwt_required()
 def secret():
-    usuario_atual = get_jwt_identify().get('nome')
+    usuario_atual = get_jwt_identity()
     logging.info(f'Rota /api/secretaria acessada pelo usuario {usuario_atual}.')
     if request.method == 'GET':
         id_secretaria = request.args.get('id')

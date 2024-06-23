@@ -5,7 +5,7 @@ from utils import oidc
 
 
 app = create_app('settings.py')
-oidc.init_app(app)
+# oidc.init_app(app)
 
-
-serve(app, host="0.0.0.0", port=5000)
+app.run(host="0.0.0.0", port=5000, debug = True)
+# serve(app, host="0.0.0.0", port=5000)

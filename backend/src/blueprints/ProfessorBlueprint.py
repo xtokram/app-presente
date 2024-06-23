@@ -2,7 +2,7 @@ from flask import Blueprint, request, jsonify
 import logging
 from repository.ProfessorRepository import ProfessorRepository
 
-from flask_jwt_extended import jwt_required, get_jwt_identify
+from flask_jwt_extended import jwt_required, get_jwt_identity
 
 from service.ProfessorService import ProfessorService
 
@@ -11,7 +11,7 @@ professores = Blueprint("professores", __name__)
 @professores.route("/api/professor", methods=['GET', 'POST', 'PUT', 'DELETE'])
 @jwt_required()
 def professor():
-    usuario_atual = get_jwt_identify().get('nome')
+    usuario_atual = get_jwt_identity()
 
     logging.info(f'Rota /api/professor acessada pelo usuario {usuario_atual}.')
     if request.method == 'GET':

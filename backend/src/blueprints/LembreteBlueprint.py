@@ -3,7 +3,7 @@ import logging
 from datetime import datetime
 from repository.LembreteRepository import LembreteRepository
 
-from flask_jwt_extended import jwt_required, get_jwt_identify
+from flask_jwt_extended import jwt_required, get_jwt_identity
 
 from service.LembreteService import LembreteService
 
@@ -12,7 +12,7 @@ lembretes = Blueprint("lembretes", __name__)
 @lembretes.route("/api/lembrete", methods=['GET', 'POST', 'PUT', 'DELETE'])
 @jwt_required()
 def lembrete():
-    usuario_atual = get_jwt_identify().get('nome')
+    usuario_atual = get_jwt_identity()
     
     logging.info(f'Rota /api/lembrete acessada pelo usuario {usuario_atual}.')
 
@@ -99,7 +99,7 @@ def find_lembrete():
 @lembretes.route("/api/lembrete/visualizar", methods=['PUT'])
 @jwt_required()
 def lembrete_visualizado():
-    usuario_atual = get_jwt_identify().get('nome')
+    usuario_atual = get_jwt_identity()
 
     logging.info(f'Rota /api/lembrete/visualizar acessada pelo usuario {usuario_atual}.')
 

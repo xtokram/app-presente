@@ -1,6 +1,6 @@
 from flask import Blueprint, request, jsonify,session
 import logging
-from flask_jwt_extended import jwt_required,create_access_token, get_jwt_identify
+from flask_jwt_extended import jwt_required,create_access_token, get_jwt_identity
 import requests, os
 from datetime import datetime
 
@@ -11,7 +11,7 @@ usuarios = Blueprint("usuario", __name__)
 @usuarios.route("/api/usuario", methods=['GET', 'POST', 'PUT', 'DELETE'])
 @jwt_required()
 def usuario():
-    usuario_atual = get_jwt_identify().get('nome')
+    usuario_atual = get_jwt_identity()
     logging.info('Rota /api/usuario acessada.')
     if request.method == 'GET':
         id_usuario = request.args.get('id')

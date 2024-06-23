@@ -1,7 +1,7 @@
 from flask import Blueprint, request, jsonify
 import logging
 from repository.MateriaRepository import MateriaRepository
-from flask_jwt_extended import jwt_required, get_jwt_identify
+from flask_jwt_extended import jwt_required, get_jwt_identity
 from service.MateriaService import MateriaService
 
 from utils import oidc
@@ -12,7 +12,7 @@ materias = Blueprint("Materia", __name__)
 @jwt_required()
 # @oidc.accept_token()
 def materia():
-    usuario_atual = get_jwt_identify().get('nome')
+    usuario_atual = get_jwt_identity()
 
     logging.info(f'Rota /api/materia acessada pelo usuario {usuario_atual}.')
     if request.method == 'GET':

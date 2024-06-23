@@ -1,6 +1,6 @@
 from flask import Blueprint, request, jsonify
 import logging
-from flask_jwt_extended import jwt_required, get_jwt_identify
+from flask_jwt_extended import jwt_required, get_jwt_identity
 from service.ConfiguracaoService import ConfiguracaoService
 
 configuracoes = Blueprint("configuracoes", __name__)
@@ -8,7 +8,7 @@ configuracoes = Blueprint("configuracoes", __name__)
 @configuracoes.route("/api/configuracao", methods=['GET', 'POST', 'PUT', 'DELETE'])
 @jwt_required()
 def configuracao():
-    usuario_atual = get_jwt_identify().get('nome')
+    usuario_atual = get_jwt_identity()
 
     logging.info(f'Rota /api/configuracao acessada pelo usuario {usuario_atual}.')
 

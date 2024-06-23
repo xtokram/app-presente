@@ -1,7 +1,7 @@
 from flask import Blueprint, request, jsonify
 import logging
 from repository.ChamadaRepository import ChamadaRepository
-from flask_jwt_extended import jwt_required, get_jwt_identify
+from flask_jwt_extended import jwt_required, get_jwt_identity
 
 from service.ChamadaService import ChamadaService
 
@@ -10,8 +10,7 @@ chamadas = Blueprint("chamadas", __name__)
 @chamadas.route("/api/chamada", methods=['GET', 'POST', 'PUT', 'DELETE'])
 @jwt_required()
 def professor():
-    usuario_atual = get_jwt_identify().get('nome')
-
+    usuario_atual = get_jwt_identity()
     logging.info(f'Rota /api/chamada acessada pelo usuario {usuario_atual}.')
 
     if request.method == 'GET':
@@ -108,7 +107,7 @@ def chamadas_abertas():
 @chamadas.route("/api/chamada/fecharChamada", methods=['PUT'])
 @jwt_required()
 def fechar_chamada():
-    usuario_atual = get_jwt_identify().get('nome')
+    usuario_atual = get_jwt_identity()
 
     logging.info(f'Rota /api/chamada/fecharChamada acessada pelo usuario {usuario_atual}.')
 
@@ -124,7 +123,7 @@ def fechar_chamada():
 @chamadas.route("/api/chamada/updateAll", methods=['GET'])
 @jwt_required()
 def updateAll():
-    usuario_atual = get_jwt_identify().get('nome')
+    usuario_atual = get_jwt_identity()
 
     logging.info(f'Rota /api/chamada/updateAll acessada pelo usuario {usuario_atual}.')
 

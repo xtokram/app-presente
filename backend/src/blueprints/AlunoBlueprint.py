@@ -1,7 +1,7 @@
 from flask import Blueprint, request, jsonify
 import logging
 from repository.AlunoRepository import AlunoRepository
-from flask_jwt_extended import jwt_required, get_jwt_identify
+from flask_jwt_extended import jwt_required, get_jwt_identity
 
 from service.AlunoService import AlunoService
 
@@ -10,7 +10,7 @@ alunos = Blueprint("alunos", __name__)
 @alunos.route("/api/aluno", methods=['GET', 'POST', 'PUT', 'DELETE'])
 @jwt_required()
 def aluno():
-    usuario_atual = get_jwt_identify().get('nome')
+    usuario_atual = get_jwt_identity()
 
     logging.info(f'Rota /api/aluno acessada pelo usuario {usuario_atual}.')
 
