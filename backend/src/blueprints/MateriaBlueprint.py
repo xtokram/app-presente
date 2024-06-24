@@ -30,7 +30,7 @@ def materia():
         nome = data.get('nome', 'NOT_FOUND')
 
         try:
-            logging.info(f'Materia {nome} registrada pelo usuario {usuario_atual}.')
+            logging.info(f'MATERIA_REGISTRADA: Materia {nome} registrada pelo usuario {usuario_atual}.')
 
             return MateriaService.register(status=status, nome=nome)
         except AssertionError as error:
@@ -45,7 +45,7 @@ def materia():
         nome = data.get('nome', 'NOT_FOUND')
 
         try: 
-            logging.info(f'Materia com id {id_materia} editada pelo usuario {usuario_atual}.')
+            logging.info(f'MATERIA_EDITADA: Materia com id {id_materia} editada pelo usuario {usuario_atual}.')
 
             return MateriaService.update(id_materia=id_materia, status=status, nome=nome)
         except AssertionError as error:
@@ -55,7 +55,7 @@ def materia():
     if request.method == 'DELETE':
         id_materia = request.args.get('id')
         try:
-            logging.info(f'Materia  com id {id_materia} deletada pelo usuario {usuario_atual}.')
+            logging.info(f'MATERIA_DELETADA: Materia  com id {id_materia} deletada pelo usuario {usuario_atual}.')
 
             return jsonify(MateriaService.delete(id_materia))
         except AssertionError as error:

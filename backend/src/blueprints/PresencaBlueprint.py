@@ -31,7 +31,7 @@ def presencas_main():
         horario = data.get('horario', 'NOT_FOUND')
 
         try:
-            logging.info(f'Presença do aluno {id_aluno} registrada pelo usuario {usuario_atual}.')
+            logging.info(f'PRESENCA_REGISTRADA: Presença do aluno {id_aluno} registrada pelo usuario {usuario_atual}.')
 
             return PresencaService.register(id_aluno=id_aluno, id_chamada=id_chamada, status=status, tipo_presenca=tipo_presenca, horario=horario)
         except AssertionError as error:
@@ -49,7 +49,7 @@ def presencas_main():
         horario = data.get('horario', 'NOT_FOUND')
 
         try:
-            logging.info(f'Presença com id {id_presenca} editada pelo usuario {usuario_atual}.')
+            logging.info(f'PRESENCA_ATUALIZADA: Presença com id {id_presenca} editada pelo usuario {usuario_atual}.')
 
             return PresencaService.update(id_presenca=id_presenca, id_aluno=id_aluno, id_chamada=id_chamada, status=status, tipo_presenca=tipo_presenca, horario=horario)
         except AssertionError as error:
@@ -59,7 +59,7 @@ def presencas_main():
     if request.method == 'DELETE':
         id_presenca = request.args.get('id')
         try:
-            logging.info(f'Presença com id {id_presenca} deletada pelo usuario {usuario_atual}.')
+            logging.info(f'PRESENCA_DELETADA: Presença com id {id_presenca} deletada pelo usuario {usuario_atual}.')
             
             return jsonify(PresencaService.delete(id_presenca))
         except AssertionError as error:

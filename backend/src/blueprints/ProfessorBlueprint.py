@@ -30,7 +30,7 @@ def professor():
         nome = data.get('nome', 'NOT_FOUND')
 
         try:
-            logging.info(f'Professor {nome} registrado pelo usuario {usuario_atual}.')
+            logging.info(f'PROFESSOR_REGISTRADO: Professor {nome} registrado pelo usuario {usuario_atual}.')
 
             return ProfessorService.register(id_usuario=id_usuario, status=status, nome=nome)
         except AssertionError as error:
@@ -45,7 +45,7 @@ def professor():
         status = True
         nome = data.get('nome', 'NOT_FOUND')
         try:
-            logging.info(f'Professor com id {id_professor} editado pelo usuario {usuario_atual}.')
+            logging.info(f'PROFESSOR_EDITADO: Professor com id {id_professor} editado pelo usuario {usuario_atual}.')
 
             return ProfessorService.update(id_professor=id_professor, status=status, nome=nome)
         except AssertionError as error:
@@ -55,7 +55,7 @@ def professor():
     if request.method == 'DELETE':
         id_professor = request.args.get("id")
         try:
-            logging.info(f'Professor com id {id_professor} deletado pelo usuario {usuario_atual}.')
+            logging.info(f'PROFESSOR_DELETADO: Professor com id {id_professor} deletado pelo usuario {usuario_atual}.')
 
             return jsonify(ProfessorService.delete(id_professor))
         except AssertionError as error:

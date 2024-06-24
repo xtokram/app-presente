@@ -32,7 +32,7 @@ def usuario():
         cargo = data.get('cargo', 'NOT_FOUND')
 
         try:
-            logging.info(f'Usuario {nome} registrado pelo usuario {usuario_atual}.')
+            logging.info(f'USUARIO_REGISTRADO: Usuario {nome} registrado pelo usuario {usuario_atual}.')
 
             return UsuarioService.register(status=status, login=login, senha=senha, nome=nome, ra=ra, cargo=cargo)
         except AssertionError as error:
@@ -51,7 +51,7 @@ def usuario():
         cargo = data.get('cargo', 'NOT_FOUND')
 
         try:
-            logging.info(f'Usuario com id {id_usuario} editado pelo usuario {usuario_atual}.')
+            logging.info(f'USUARIO_EDITADO: Usuario com id {id_usuario} editado pelo usuario {usuario_atual}.')
 
             return UsuarioService.update(id_usuario=id_usuario, status=status, login=login, senha=senha, nome=nome, ra=ra, cargo=cargo)
         except AssertionError as error:
@@ -61,7 +61,7 @@ def usuario():
     if request.method == 'DELETE':
         id_usuario = request.args.get('id')
         try:
-            logging.info(f'Usuario com id {id_usuario} deletado pelo usuario {usuario_atual}.')
+            logging.info(f'USUARIO_DELETADO: Usuario com id {id_usuario} deletado pelo usuario {usuario_atual}.')
 
             return jsonify(UsuarioService.delete(id_usuario))
         except AssertionError as error:

@@ -34,7 +34,7 @@ def turma():
         curso = data.get('curso', 'NOT_FOUND')
 
         try:
-            logging.info(f'Turma {nome} registrada pelo usuario {usuario_atual}.')
+            logging.info(f'TURMA_REGISTRADA: Turma {nome} registrada pelo usuario {usuario_atual}.')
 
             return TurmaService.post_turma(status, id_materia, nome, ano, semestre, turno, modalidade, curso)
         except AssertionError as error:
@@ -55,7 +55,7 @@ def turma():
         curso = data.get('curso', 'NOT_FOUND')
 
         try:
-            logging.info(f'Turma com id {id_materia} editada pelo usuario {usuario_atual}.')
+            logging.info(f'TURMA_ATUALIZADA: Turma com id {id_materia} editada pelo usuario {usuario_atual}.')
 
             return TurmaService.update(id_turma=id_turma, id_materia=id_materia, status=status, nome=nome, ano=ano, semestre=semestre, turno=turno, modalidade=modalidade, curso=curso)
         except AssertionError as error:
@@ -66,7 +66,7 @@ def turma():
         id_turma = request.args.get('id')
 
         try:
-            logging.info(f'Turma com id {id_turma} deletada pelo usuario {usuario_atual}.')
+            logging.info(f'TURMA_DELETADA: Turma com id {id_turma} deletada pelo usuario {usuario_atual}.')
 
             return jsonify(TurmaService.delete(id_turma))
         except AssertionError as error:

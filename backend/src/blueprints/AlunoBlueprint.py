@@ -34,7 +34,7 @@ def aluno():
         ausente = False
         
         try:
-            logging.info(f'Aluno {nome} registrado pelo usuario {usuario_atual}.')
+            logging.info(f'ALUNO_REGISTRADO: Aluno {nome} registrado pelo usuario {usuario_atual}.')
 
             return AlunoService.register(id_usuario=id_usuario, status=status, nome=nome, ra=ra, ausente=ausente)
         except AssertionError as error:
@@ -53,7 +53,7 @@ def aluno():
         ausente = False
 
         try:
-            logging.info(f'Aluno {nome} editado pelo usuario {usuario_atual}.')
+            logging.info(f'ALUNO_EDITADO: Aluno {nome} editado pelo usuario {usuario_atual}.')
 
             return AlunoService.update(id_aluno=id_aluno, status=status, nome=nome, ra=ra, ausente=ausente)
         except AssertionError as error:
@@ -64,7 +64,7 @@ def aluno():
     if request.method == 'DELETE':
         id_aluno = request.args.get('id')
         try:
-            logging.info(f'Aluno com id {id_aluno} deletado pelo usuario {usuario_atual}.')
+            logging.info(f'ALUNO_DELETADO: Aluno com id {id_aluno} deletado pelo usuario {usuario_atual}.')
 
             return jsonify(AlunoService.delete(id_aluno))
         except AssertionError as error:

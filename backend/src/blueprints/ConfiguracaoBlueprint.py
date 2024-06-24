@@ -30,7 +30,7 @@ def configuracao():
         fim_aula = data.get('fim_aula', 'NOT_FOUND')
 
         try:
-            logging.info(f'Config registrada pelo usuario {usuario_atual}.')
+            logging.info(f'CONFIG_REGISTRADA: Config registrada pelo usuario {usuario_atual}.')
 
             return ConfiguracaoService.register(status=status, aluno_ausente=aluno_ausente, inicio_aula=inicio_aula, fim_aula=fim_aula)
         except AssertionError as error:
@@ -48,7 +48,7 @@ def configuracao():
         fim_aula = data.get('fim_aula', 'NOT_FOUND')
 
         try:
-            logging.info(f'Config com id {id_configuracao} editada pelo usuario {usuario_atual}.')
+            logging.info(f'CONFIG_EDITADA: Config com id {id_configuracao} editada pelo usuario {usuario_atual}.')
 
             return ConfiguracaoService.update(id_configuracao=id_configuracao, status=status, aluno_ausente=aluno_ausente, inicio_aula=inicio_aula, fim_aula=fim_aula)
         except AssertionError as error:
@@ -60,7 +60,7 @@ def configuracao():
         id_configuracao = request.args.get('id')
 
         try:
-            logging.info(f'Config com id {id_configuracao} deletada pelo usuario {usuario_atual}.')
+            logging.info(f'CONFIG_DELETADA: Config com id {id_configuracao} deletada pelo usuario {usuario_atual}.')
 
             return jsonify(ConfiguracaoService.delete(id_configuracao))
         except AssertionError as error:

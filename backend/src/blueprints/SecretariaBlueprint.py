@@ -28,7 +28,7 @@ def secret():
         nome = data.get('nome', 'NOT_FOUND')
         
         try:
-            logging.info(f'Secretaria {nome} registrada pelo usuario {usuario_atual}.')
+            logging.info(f'SECRETARIA_REGISTRADA: Secretaria {nome} registrada pelo usuario {usuario_atual}.')
 
             return SecretariaService.register(id_usuario=id_usuario, status=status, nome=nome)
         except AssertionError as error:
@@ -44,7 +44,7 @@ def secret():
         nome = data.get('nome', 'NOT_FOUND')
         
         try:
-            logging.info(f'Secretaria com id {id_secretaria} editada pelo usuario {usuario_atual}.')
+            logging.info(f'SECRETARIA_EDITADA: Secretaria com id {id_secretaria} editada pelo usuario {usuario_atual}.')
 
             return SecretariaService.update(id_secretaria=id_secretaria, status=status, nome=nome)
         except AssertionError as error:
@@ -54,7 +54,7 @@ def secret():
     if request.method == 'DELETE':
         id_secretaria = request.args.get('id')
         try:
-            logging.info(f'Secretaria com id {id_secretaria} deletada pelo usuario {usuario_atual}.')
+            logging.info(f'SECRETARIA_DELETADA: Secretaria com id {id_secretaria} deletada pelo usuario {usuario_atual}.')
 
             return jsonify(SecretariaService.delete(id_secretaria))
         except AssertionError as error:
